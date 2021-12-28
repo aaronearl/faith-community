@@ -1,0 +1,1 @@
+module.exports = require("/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/src/utils/typography.js")
