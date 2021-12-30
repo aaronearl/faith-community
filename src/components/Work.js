@@ -11,7 +11,7 @@ const Work = () => (
     <div className="nine columns main-col">
     <div className="row item">
         <div className="twelve columns">
-          <h3>Beliefs</h3>
+          {/* <h3>Beliefs</h3> */}
           <p className="info">
             {/* Core Values */}
             <span>&bull;</span>

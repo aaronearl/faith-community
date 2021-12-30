@@ -24,7 +24,7 @@ const Education = () => (
 
       <div className="row item">
         <div className="twelve columns">
-          <h3>Our Assignment</h3>
+          {/* <h3>Our Assignment</h3> */}
           <p className="info">
            <h4>
             Our Mission is to build a community of Faith that is motivated by love, via evangelistic zeal that operates in the priciples and teachings of the Holy Bible.  Where people find and live out their divine purpose and fulfill the Great Commission of God. 

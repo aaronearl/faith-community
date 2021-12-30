@@ -24,10 +24,13 @@ Est pellentesque elit ullamcorper dignissim. Eu feugiat pretium nibh ipsum conse
         <div className="row">
           <div className="columns contact-details">
             <h2>Contact Details</h2>
+            <h3>
             <p className="address">
               <span>Faith Community Foursquare Church</span>
               <br />
               <span>Sunday Morning Service 10am</span>
+              <br />
+              <span>Wednesday Night Bible Study 6pm</span>
               <span>
                 <br /> 5519 Avalon Blvd. 
               </span>
@@ -37,8 +40,8 @@ Est pellentesque elit ullamcorper dignissim. Eu feugiat pretium nibh ipsum conse
               <br />
               <span>(323) 816-6163</span>
               <br />
-              <span>speak2cdc@yahoo.com</span>
             </p>
+            </h3>
           </div>
           {/* <div className="columns download">
             <p>
