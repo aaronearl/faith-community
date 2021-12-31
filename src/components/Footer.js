@@ -10,7 +10,7 @@ const Footer = () => (
           <h5>
           <li>&copy; Faith Community Foursquare Church</li>
           <li>
-            Design by{'Aaron Harris'}
+            {/* Design by{'Aaron Harris'} */}
             {/* <a title="Styleshout" href="http://www.styleshout.com/">
               Styleshout
             </a> */}
