@@ -13,11 +13,18 @@ const About = () => (
         <h2>Our Pastor</h2>
         <h4>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus turpis in eu mi bibendum neque egestas congue. Pulvinar mattis nunc sed blandit. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Metus vulputate eu scelerisque felis. Feugiat sed lectus vestibulum mattis ullamcorper velit sed. Lorem ipsum dolor sit amet consectetur adipiscing elit duis. Dolor magna eget est lorem ipsum. Enim praesent elementum facilisis leo vel fringilla est. Donec massa sapien faucibus et. Velit sed ullamcorper morbi tincidunt. Posuere urna nec tincidunt praesent semper. Cras sed felis eget velit aliquet sagittis. Morbi enim nunc faucibus a pellentesque sit amet porttitor eget.
+        Rev. D.T. Paredes has had the honor of preaching, teaching, and singing the Gospel of Jesus Christ from South Central Los Angeles to Cape Town, South Africa.
+Rev. Paredes, a native of Los Angeles, CA has served for 17 years as a Christian School Educator 
+and 30 consecutive years as a Senior Pastor in The International Church of the  Foursquare Gospel, serving in the heart of the inner-city of Los Angeles.
+Rev. D.T. Paredes was academically prepared at both L.I.F.E. Bible College and Fuller Theological Seminary.  Rev. D.T. Paredes has taught and trained pastors and leaders internationally.
+Through Music and Ministry, the doors of opportunity have been opened across the globe. 
+Rev. Paredes has traveled to Five continents and sung at some of the world's most celebrated music venues; from New York's Legendary Carnegie Hall to U.C.L.A.’s Historic Royce Hall, as well as some of the great Concert Halls of the United Kingdom, including working with The Royal Philharmonic Orchestra and recording at the legendary Abbey Road Studio.
+Rev. Paredes also has a long history of fruitfulness in the area of Discipleship and Community Development.  His work in the area of Community Development as a Board Member of the 
+West Angeles Church of God In Christ CDC (Community Development Corporation) has been distinguished by being written into the Congregational Record of The United States of America (Currently on file in The United States Library of Congress.) 
+His legacy of discipleship began nearly twenty years prior to the beginning of his “formal” pastorate and spans well over two generations.
+Even with his long history of service, “Pastor” as he is lovingly called; is still passionate about people and letting them know that no matter how disenfranchised or disqualified they may feel, they are truly…
+“Accepted in the Beloved!”  Ephesians 1:6
 
-Blandit cursus risus at ultrices mi tempus. Dolor magna eget est lorem ipsum. In nisl nisi scelerisque eu ultrices. Pellentesque elit eget gravida cum sociis natoque penatibus. Nisl purus in mollis nunc sed id semper. Diam ut venenatis tellus in metus vulputate eu. Nisi lacus sed viverra tellus in hac habitasse platea. Quisque sagittis purus sit amet volutpat consequat. Vel risus commodo viverra maecenas accumsan. Adipiscing elit ut aliquam purus.
-
-Est pellentesque elit ullamcorper dignissim. Eu feugiat pretium nibh ipsum consequat nisl. Donec et odio pellentesque diam volutpat commodo sed egestas. Tortor at auctor urna nunc id cursus. Tempus egestas sed sed risus pretium quam vulputate. Mi bibendum neque egestas congue quisque egestas. Vitae justo eget magna fermentum iaculis. Diam sollicitudin tempor id eu nisl nunc. Luctus venenatis lectus magna fringilla urna porttitor. Eu feugiat pretium nibh ipsum consequat. Vel eros donec ac odio tempor orci dapibus ultrices. Porta nibh venenatis cras sed felis. Cras tincidunt lobortis feugiat vivamus at augue.
         </p>
         </h4>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/SlpzUInKZsw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
