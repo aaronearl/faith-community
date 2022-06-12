@@ -17,25 +17,25 @@ const Testimonials = () => (
       <div className="row">
         <div className="two columns header-col" />
         <div className="ten columns">
-          <h1>Client Testimonials</h1>
+          <h1>Testimonials</h1>
           <ul>
             {/* <Slider {...settings}> */}
-              <li>
-                <blockquote>
-                  <p>
-                   We celebrate with you, Pastor Terry Paredes your family is Godly Proud of you and all of your work in the ministry over these last 54 years.  To God be the glory for the things he has done through your life thus far, BUT THE BEST IS YET TO COME!!!
-                  </p>
-                  <cite>Marcus, Teddi, Randi and Jeanne</cite>
-                </blockquote>
-              </li>
-              <li>
-                <blockquote>
-                  <p>
-                    Sincere congratulations to Pastor D.T. Paredes on 25 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come.  
-                  </p>
-                  <cite>Betty Dixon, Pico Pre-School </cite>
-                </blockquote>
-              </li>
+            <li>
+              <blockquote>
+                <p>
+                  We celebrate with you, Pastor Terry Paredes your family is Godly Proud of you and all of your work in the ministry over these last 54 years.  To God be the glory for the things he has done through your life thus far, BUT THE BEST IS YET TO COME!!!
+                </p>
+                <cite>Marcus, Teddi, Randi and Jeanne</cite>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote>
+                <p>
+                  Sincere congratulations to Pastor D.T. Paredes on 25 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come.
+                </p>
+                <cite>Betty Dixon, Pico Pre-School </cite>
+              </blockquote>
+            </li>
             {/* </Slider> */}
           </ul>
         </div>
