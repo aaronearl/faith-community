@@ -6,7 +6,8 @@ const Banner = () => (
     <div className="banner-text">
       <h1 className="responsive-headline">Faith Community Foursquare Church</h1>
       <h2>
-        A Foursquare Gospel Church  <span>Rev. DT Paredes</span>,
+        A Foursquare Gospel Church</h2>
+      <h2><span>Rev. D.T. Paredes</span>,
         {/* <span>Restaurant Manager</span> and <span>Territory Manager</span>  Let's */}
         <a className="smoothscroll" href="#about">
           {" "}
@@ -15,8 +16,8 @@ const Banner = () => (
         {/* and learn more */}
         <a className="smoothscroll" href="#about">
           {" "}
-          Pastor
-        </a>.
+          Senior Pastor
+        </a>
       </h2>
       <hr />
       <SocialLinks />

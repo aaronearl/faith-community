@@ -25,13 +25,13 @@ const Testimonials = () => (
                 <p>
                   We celebrate with you, Pastor Terry Paredes your family is Godly Proud of you and all of your work in the ministry over these last 54 years.  To God be the glory for the things he has done through your life thus far, BUT THE BEST IS YET TO COME!!!
                 </p>
-                <cite>Marcus, Teddi, Randi and Jeanne</cite>
+                <cite>Marcus, Teddi, Randi and Jeanine</cite>
               </blockquote>
             </li>
             <li>
               <blockquote>
                 <p>
-                  Sincere congratulations to Pastor D.T. Paredes on 25 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come.
+                  Sincere congratulations to Pastor D.T. Paredes on 30 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come.
                 </p>
                 <cite>Betty Dixon, Pico Pre-School </cite>
               </blockquote>

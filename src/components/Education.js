@@ -17,8 +17,6 @@ const Education = () => (
             <span>&bull;</span>
             <em className="date">April 2007</em>
           </p>
-
-
         </div>
       </div> */}
 
@@ -26,13 +24,10 @@ const Education = () => (
         <div className="twelve columns">
           {/* <h3>Our Assignment</h3> */}
           <p className="info">
-           <h4>
-            Our Mission is to build a community of Faith that is motivated by love, via evangelistic zeal that operates in the priciples and teachings of the Holy Bible.  Where people find and live out their divine purpose and fulfill the Great Commission of God. 
+            <h4>
+              Our Mission is to Build a Community of Faith that is motivated by Love, that is Evangelistic in Zeal that Operates in the Principles and Teachings of the Holy Bible; where people find and live out their Divine Purpose and Fulfill the Great Commission.
             </h4>
-            <span>&bull;</span>
-
-          </p>
-
+            <span>&bull;</span></p>
         </div>
       </div>
     </div>
