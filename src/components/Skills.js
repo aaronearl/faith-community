@@ -19,10 +19,12 @@ const Skills = () => (
           {/* <p>What are the of a Foursquare Church?</p> */}
 
           <p></p>
-          <p>Why attend the Faith Community Foursquare Church.</p>
+          <h2>Why attend the Faith Community Foursquare Church?</h2>
+          <br></br>
+          <p>For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! </p>
+
           <p>Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.</p>
-          <p>The benfit is Faith Community is remarkable, and person of good intentions and a desire to learn about the creator will have an increase in their life.  Below is a diagram relating percentages of gain or increase in the average attendee of Faith Community Foursquare Church.</p>
-          <p><h3>The Benefit</h3> Increased spiritual strenght Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger thorough Power of Jesus Christ! </p>
+
         </h4>
         <br />
         {/* <ul className="skills">
