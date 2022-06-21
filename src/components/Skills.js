@@ -1,12 +1,15 @@
 import React from "react";
-
+// import profilePic from "../assets/images/ancient.png";
 const Skills = () => (
   <div className="row skill">
-    <div className="three columns header-col">
-      <h1>
-        <span>How You Benefit</span>
-      </h1>
-    </div>
+    {/* <div className="three columns header-col"> */}
+    <h1>
+      <span>Ministry</span>
+    </h1>
+    {/* <div className="three columns"> */}
+    {/* <img className="profile-pic" src={ancient} alt="" /> */}
+    {/* </div> */}
+    {/* </div> */}
 
     <div className="nine columns main-col">
 
@@ -22,7 +25,7 @@ const Skills = () => (
           <p><h3>The Benefit</h3> Increased spiritual strenght Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger thorough Power of Jesus Christ! </p>
         </h4>
         <br />
-        <ul className="skills">
+        {/* <ul className="skills">
           <li>
             <span className="bar-expand photoshop" />
             <em>Bible Knowledge</em>
@@ -47,7 +50,7 @@ const Skills = () => (
             <span className="bar-expand photoshop" />
             <em>Joy and Happiness</em>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   </div>
