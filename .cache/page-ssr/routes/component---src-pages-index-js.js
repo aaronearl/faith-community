@@ -2002,11 +2002,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Education */ "./src/components/Education.js");
 /* harmony import */ var _Work__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Work */ "./src/components/Work.js");
-/* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Skills */ "./src/components/Skills.js");
 
 
-
-
+ // import Skills from "./Skills";
 
 const Resume = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
   id: "resume"
@@ -2063,7 +2061,7 @@ const Skills = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().c
   className: "nine columns main-col"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
   className: "bars"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Why attend the Faith Community Foursquare Church."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "The benfit is Faith Community is remarkable, and person of good intentions and a desire to learn about the creator will have an increase in their life.  Below is a diagram relating percentages of gain or increase in the average attendee of Faith Community Foursquare Church."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "The Benefit"), " Increased spiritual strenght Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger thorough Power of Jesus Christ! ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Why attend the Faith Community Foursquare Church?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Skills);
 

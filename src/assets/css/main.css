@@ -2169,7 +2169,8 @@ call-to-action .button {
   -webkit-background-size: cover !important;
   background-attachment: fixed;
 
-  position: relative;
+  padding-top: 100px;
+  position: static;
   min-height: 500px;
   width: 100%;
   overflow: hidden;
