@@ -1361,7 +1361,7 @@ body {
 header {
   position: relative;
   height: 1250px;
-  min-height: 500px;
+  min-height: 200px;
   width: 100%;
   background: #161415 url(../images/header-background.jpg) no-repeat top center;
   background-size: cover !important;
@@ -1392,7 +1392,7 @@ header .banner-text {
 }
 
 header .banner-text h1 {
-  font: 90px/1.1em "opensans-bold", sans-serif;
+  font: 100px/1.1em "opensans-bold", sans-serif;
   color: #fff;
   letter-spacing: -2px;
   margin: 0 auto 18px auto;
@@ -1400,7 +1400,7 @@ header .banner-text h1 {
 }
 
 header .banner-text h3 {
-  font: 18px/1.9em "librebaskerville-regular", serif;
+  font: 28px/1.9em "librebaskerville-regular", serif;
   color: #a8a8a8;
   margin: 0 auto;
   width: 70%;
