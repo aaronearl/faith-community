@@ -2053,15 +2053,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- // import profilePic from "../assets/images/ancient.png";
+/* harmony import */ var _assets_images_ancient_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/images/ancient.png */ "./src/assets/images/ancient.png");
+/* harmony import */ var _assets_images_pastoranddoctor_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/pastoranddoctor.jpg */ "./src/assets/images/pastoranddoctor.jpg");
+/* harmony import */ var _assets_images_youngmen_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/images/youngmen.jpg */ "./src/assets/images/youngmen.jpg");
+
+
+
+
 
 const Skills = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
   className: "row skill"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Ministry")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "three columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_pastoranddoctor_jpg__WEBPACK_IMPORTED_MODULE_2__["default"],
+  alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_ancient_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+  alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_youngmen_jpg__WEBPACK_IMPORTED_MODULE_3__["default"],
+  alt: ""
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
   className: "nine columns main-col"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
   className: "bars"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Why attend the Faith Community Foursquare Church?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Faith Community is a Ministry Team of D.T. Paredes Senior Pastor and Mardra Paredes Assistant Pastor who are fleshly brother and sister serving the Faith Community"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Why attend the Faith Community Foursquare Church?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Skills);
 
@@ -7384,6 +7401,36 @@ module.exports = camel2hyphen;
 
 /***/ }),
 
+/***/ "./src/assets/images/ancient.png":
+/*!***************************************!*\
+  !*** ./src/assets/images/ancient.png ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/ancient-182ced164503dbdd279f48f9ed7f2fa3.png");
+
+/***/ }),
+
+/***/ "./src/assets/images/pastoranddoctor.jpg":
+/*!***********************************************!*\
+  !*** ./src/assets/images/pastoranddoctor.jpg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/pastoranddoctor-6985418eda6a134d72db0964fc489d00.jpg");
+
+/***/ }),
+
 /***/ "./src/assets/images/profilepic.jpg":
 /*!******************************************!*\
   !*** ./src/assets/images/profilepic.jpg ***!
@@ -7396,6 +7443,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/jpeg;base64,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");
+
+/***/ }),
+
+/***/ "./src/assets/images/youngmen.jpg":
+/*!****************************************!*\
+  !*** ./src/assets/images/youngmen.jpg ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/youngmen-f8deeb30ad58d86a24796d6ddaade64e.jpg");
 
 /***/ })
 

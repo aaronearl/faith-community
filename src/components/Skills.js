@@ -22,7 +22,16 @@ const Skills = () => (
         <h4>
           {/* <p>What are the of a Foursquare Church?</p> */}
 
-          <p>Faith Community is a Ministry Team of D.T. Paredes Senior Pastor and Mardra Paredes Assistant Pastor who are fleshly brother and sister serving the Faith Community</p>
+          <p>The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to...</p>
+          <ul>
+            -MUSIC
+            -FOOD FELLOWSHIP
+            -COMMUNITY OUTREACH AND EDUCATION
+            -DRAMA: 'The Faith Community Players'
+            -COUNSELING and MORE
+          </ul>
+          <p>One of our Strenghts is Our Willingness to "Submit to One Another in Love" Ephesians 5:21</p>
+          <p>Rev. D.T. Paredes and Dr. Mardra J. Paredes Are a Brother and Sister Ministry Team they Serve as Senior Pastor and Assistant Pastor; Perspectively.</p>
           <br></br>
           <h2>Why attend the Faith Community Foursquare Church?</h2>
           <br></br>
