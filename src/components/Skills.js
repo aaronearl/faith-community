@@ -9,8 +9,8 @@ const Skills = () => (
       <span>Ministry</span>
     </h1>
     <div className="three columns">
-      <img src={ancient} alt="" />
       <img src={pastoranddoctor} alt="" />
+      <img src={ancient} alt="" />
       <img src={youngmen} alt="" />
     </div>
     {/* </div> */}
@@ -22,7 +22,8 @@ const Skills = () => (
         <h4>
           {/* <p>What are the of a Foursquare Church?</p> */}
 
-          <p></p>
+          <p>Faith Community is a Ministry Team of D.T. Paredes Senior Pastor and Mardra Paredes Assistant Pastor who are fleshly brother and sister serving the Faith Community</p>
+          <br></br>
           <h2>Why attend the Faith Community Foursquare Church?</h2>
           <br></br>
           <p>For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! </p>
