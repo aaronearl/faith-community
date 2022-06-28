@@ -1,5 +1,5 @@
 import React from "react";
-// import profilePic from "../assets/images/ancient.png";
+import ancient from "../assets/images/ancient.png";
 const Skills = () => (
   <div className="row skill">
     {/* <div className="three columns header-col"> */}
@@ -7,7 +7,7 @@ const Skills = () => (
       <span>Ministry</span>
     </h1>
     {/* <div className="three columns"> */}
-    {/* <img className="profile-pic" src={ancient} alt="" /> */}
+    <img src={ancient} alt="" />
     {/* </div> */}
     {/* </div> */}
 
