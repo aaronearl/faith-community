@@ -1,14 +1,18 @@
 import React from "react";
 import ancient from "../assets/images/ancient.png";
+import pastoranddoctor from "../assets/images/pastoranddoctor.jpg";
+import youngmen from "../assets/images/youngmen.jpg";
 const Skills = () => (
   <div className="row skill">
     {/* <div className="three columns header-col"> */}
     <h1>
       <span>Ministry</span>
     </h1>
-    {/* <div className="three columns"> */}
-    <img src={ancient} alt="" />
-    {/* </div> */}
+    <div className="three columns">
+      <img src={ancient} alt="" />
+      <img src={pastoranddoctor} alt="" />
+      <img src={youngmen} alt="" />
+    </div>
     {/* </div> */}
 
     <div className="nine columns main-col">
