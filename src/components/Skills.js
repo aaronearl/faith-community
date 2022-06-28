@@ -2,6 +2,7 @@ import React from "react";
 import ancient from "../assets/images/ancient.png";
 import pastoranddoctor from "../assets/images/pastoranddoctor.jpg";
 import youngmen from "../assets/images/youngmen.jpg";
+import deacons from "../assets/images/deacons.jpg";
 const Skills = () => (
   <div className="row skill">
     {/* <div className="three columns header-col"> */}
@@ -10,6 +11,7 @@ const Skills = () => (
     </h1>
     <div className="three columns">
       <img src={pastoranddoctor} alt="" />
+      <img src={deacons} alt="" />
       <img src={ancient} alt="" />
       <img src={youngmen} alt="" />
     </div>
@@ -31,8 +33,8 @@ const Skills = () => (
             -DRAMA: 'The Faith Community Players'
             -COUNSELING and MORE
           </ul>
-          <p>One of our Strenghts is Our Willingness to "Submit to One Another in Love" Ephesians 5:21</p>
-          <p>Rev. D.T. Paredes and Dr. Mardra J. Paredes Are a Brother and Sister Ministry Team they Serve as Senior Pastor and Assistant Pastor; Perspectively.</p>
+          <p>One of Our Strengths is Our Willingness to "Submit to One Another in Love" Ephesians 5:21</p>
+          <p>Rev. D.T. Paredes and Dr. Mardra J. Paredes are 'A Brother and Sister Ministry Team' that Serve as Senior Pastor and Assistant Pastor; Respectively.</p>
           <br></br>
           <h2>Why attend the Faith Community Foursquare Church?</h2>
           <br></br>
