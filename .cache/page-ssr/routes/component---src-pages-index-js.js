@@ -1,8 +1,930 @@
-exports.id = 678;
-exports.ids = [678];
+exports.id = "component---src-pages-index-js";
+exports.ids = ["component---src-pages-index-js"];
 exports.modules = {
 
-/***/ 4184:
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/inheritsLoose.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inheritsLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************/
+/***/ ((module) => {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "./node_modules/@gatsbyjs/reach-router/es/lib/history.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@gatsbyjs/reach-router/es/lib/history.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "globalHistory": () => (/* binding */ globalHistory),
+/* harmony export */   "navigate": () => (/* binding */ navigate),
+/* harmony export */   "createHistory": () => (/* binding */ createHistory),
+/* harmony export */   "createMemorySource": () => (/* binding */ createMemorySource)
+/* harmony export */ });
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var getLocation = function getLocation(source) {
+  var _source$location = source.location,
+      search = _source$location.search,
+      hash = _source$location.hash,
+      href = _source$location.href,
+      origin = _source$location.origin,
+      protocol = _source$location.protocol,
+      host = _source$location.host,
+      hostname = _source$location.hostname,
+      port = _source$location.port;
+  var pathname = source.location.pathname;
+
+
+  if (!pathname && href && canUseDOM) {
+    var url = new URL(href);
+    pathname = url.pathname;
+  }
+
+  return {
+    pathname: encodeURI(decodeURI(pathname)),
+    search: search,
+    hash: hash,
+    href: href,
+    origin: origin,
+    protocol: protocol,
+    host: host,
+    hostname: hostname,
+    port: port,
+    state: source.history.state,
+    key: source.history.state && source.history.state.key || "initial"
+  };
+};
+
+var createHistory = function createHistory(source, options) {
+  var listeners = [];
+  var location = getLocation(source);
+  var transitioning = false;
+  var resolveTransition = function resolveTransition() {};
+
+  return {
+    get location() {
+      return location;
+    },
+
+    get transitioning() {
+      return transitioning;
+    },
+
+    _onTransitionComplete: function _onTransitionComplete() {
+      transitioning = false;
+      resolveTransition();
+    },
+    listen: function listen(listener) {
+      listeners.push(listener);
+
+      var popstateListener = function popstateListener() {
+        location = getLocation(source);
+        listener({ location: location, action: "POP" });
+      };
+
+      source.addEventListener("popstate", popstateListener);
+
+      return function () {
+        source.removeEventListener("popstate", popstateListener);
+        listeners = listeners.filter(function (fn) {
+          return fn !== listener;
+        });
+      };
+    },
+    navigate: function navigate(to) {
+      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          state = _ref.state,
+          _ref$replace = _ref.replace,
+          replace = _ref$replace === undefined ? false : _ref$replace;
+
+      if (typeof to === "number") {
+        source.history.go(to);
+      } else {
+        state = _extends({}, state, { key: Date.now() + "" });
+        // try...catch iOS Safari limits to 100 pushState calls
+        try {
+          if (transitioning || replace) {
+            source.history.replaceState(state, null, to);
+          } else {
+            source.history.pushState(state, null, to);
+          }
+        } catch (e) {
+          source.location[replace ? "replace" : "assign"](to);
+        }
+      }
+
+      location = getLocation(source);
+      transitioning = true;
+      var transition = new Promise(function (res) {
+        return resolveTransition = res;
+      });
+      listeners.forEach(function (listener) {
+        return listener({ location: location, action: "PUSH" });
+      });
+      return transition;
+    }
+  };
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Stores history entries in memory for testing or other platforms like Native
+var createMemorySource = function createMemorySource() {
+  var initialPath = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "/";
+
+  var searchIndex = initialPath.indexOf("?");
+  var initialLocation = {
+    pathname: searchIndex > -1 ? initialPath.substr(0, searchIndex) : initialPath,
+    search: searchIndex > -1 ? initialPath.substr(searchIndex) : ""
+  };
+  var index = 0;
+  var stack = [initialLocation];
+  var states = [null];
+
+  return {
+    get location() {
+      return stack[index];
+    },
+    addEventListener: function addEventListener(name, fn) {},
+    removeEventListener: function removeEventListener(name, fn) {},
+
+    history: {
+      get entries() {
+        return stack;
+      },
+      get index() {
+        return index;
+      },
+      get state() {
+        return states[index];
+      },
+      pushState: function pushState(state, _, uri) {
+        var _uri$split = uri.split("?"),
+            pathname = _uri$split[0],
+            _uri$split$ = _uri$split[1],
+            search = _uri$split$ === undefined ? "" : _uri$split$;
+
+        index++;
+        stack.push({ pathname: pathname, search: search.length ? "?" + search : search });
+        states.push(state);
+      },
+      replaceState: function replaceState(state, _, uri) {
+        var _uri$split2 = uri.split("?"),
+            pathname = _uri$split2[0],
+            _uri$split2$ = _uri$split2[1],
+            search = _uri$split2$ === undefined ? "" : _uri$split2$;
+
+        stack[index] = { pathname: pathname, search: search };
+        states[index] = state;
+      },
+      go: function go(to) {
+        var newIndex = index + to;
+
+        if (newIndex < 0 || newIndex > states.length - 1) {
+          return;
+        }
+
+        index = newIndex;
+      }
+    }
+  };
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// global history - uses window.history as the source if available, otherwise a
+// memory history
+var canUseDOM = !!(typeof window !== "undefined" && window.document && window.document.createElement);
+var getSource = function getSource() {
+  return canUseDOM ? window : createMemorySource();
+};
+
+var globalHistory = createHistory(getSource());
+var navigate = globalHistory.navigate;
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@gatsbyjs/reach-router/es/lib/utils.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@gatsbyjs/reach-router/es/lib/utils.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "startsWith": () => (/* binding */ startsWith),
+/* harmony export */   "pick": () => (/* binding */ pick),
+/* harmony export */   "match": () => (/* binding */ match),
+/* harmony export */   "resolve": () => (/* binding */ resolve),
+/* harmony export */   "insertParams": () => (/* binding */ insertParams),
+/* harmony export */   "validateRedirect": () => (/* binding */ validateRedirect),
+/* harmony export */   "shallowCompare": () => (/* binding */ shallowCompare)
+/* harmony export */ });
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/invariant.js");
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_0__);
+
+
+////////////////////////////////////////////////////////////////////////////////
+// startsWith(string, search) - Check if `string` starts with `search`
+var startsWith = function startsWith(string, search) {
+  return string.substr(0, search.length) === search;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// pick(routes, uri)
+//
+// Ranks and picks the best route to match. Each segment gets the highest
+// amount of points, then the type of segment gets an additional amount of
+// points where
+//
+//     static > dynamic > splat > root
+//
+// This way we don't have to worry about the order of our routes, let the
+// computers do it.
+//
+// A route looks like this
+//
+//     { path, default, value }
+//
+// And a returned match looks like:
+//
+//     { route, params, uri }
+//
+// I know, I should use TypeScript not comments for these types.
+var pick = function pick(routes, uri) {
+  var match = void 0;
+  var default_ = void 0;
+
+  var _uri$split = uri.split("?"),
+      uriPathname = _uri$split[0];
+
+  var uriSegments = segmentize(uriPathname);
+  var isRootUri = uriSegments[0] === "";
+  var ranked = rankRoutes(routes);
+
+  for (var i = 0, l = ranked.length; i < l; i++) {
+    var missed = false;
+    var route = ranked[i].route;
+
+    if (route.default) {
+      default_ = {
+        route: route,
+        params: {},
+        uri: uri
+      };
+      continue;
+    }
+
+    var routeSegments = segmentize(route.path);
+    var params = {};
+    var max = Math.max(uriSegments.length, routeSegments.length);
+    var index = 0;
+
+    for (; index < max; index++) {
+      var routeSegment = routeSegments[index];
+      var uriSegment = uriSegments[index];
+
+      if (isSplat(routeSegment)) {
+        // Hit a splat, just grab the rest, and return a match
+        // uri:   /files/documents/work
+        // route: /files/*
+        var param = routeSegment.slice(1) || "*";
+        params[param] = uriSegments.slice(index).map(decodeURIComponent).join("/");
+        break;
+      }
+
+      if (uriSegment === undefined) {
+        // URI is shorter than the route, no match
+        // uri:   /users
+        // route: /users/:userId
+        missed = true;
+        break;
+      }
+
+      var dynamicMatch = paramRe.exec(routeSegment);
+
+      if (dynamicMatch && !isRootUri) {
+        var matchIsNotReserved = reservedNames.indexOf(dynamicMatch[1]) === -1;
+        !matchIsNotReserved ?  true ? invariant__WEBPACK_IMPORTED_MODULE_0___default()(false, "<Router> dynamic segment \"" + dynamicMatch[1] + "\" is a reserved name. Please use a different name in path \"" + route.path + "\".") : 0 : void 0;
+        var value = decodeURIComponent(uriSegment);
+        params[dynamicMatch[1]] = value;
+      } else if (routeSegment !== uriSegment) {
+        // Current segments don't match, not dynamic, not splat, so no match
+        // uri:   /users/123/settings
+        // route: /users/:id/profile
+        missed = true;
+        break;
+      }
+    }
+
+    if (!missed) {
+      match = {
+        route: route,
+        params: params,
+        uri: "/" + uriSegments.slice(0, index).join("/")
+      };
+      break;
+    }
+  }
+
+  return match || default_ || null;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// match(path, uri) - Matches just one path to a uri, also lol
+var match = function match(path, uri) {
+  return pick([{ path: path }], uri);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// resolve(to, basepath)
+//
+// Resolves URIs as though every path is a directory, no files.  Relative URIs
+// in the browser can feel awkward because not only can you be "in a directory"
+// you can be "at a file", too. For example
+//
+//     browserSpecResolve('foo', '/bar/') => /bar/foo
+//     browserSpecResolve('foo', '/bar') => /foo
+//
+// But on the command line of a file system, it's not as complicated, you can't
+// `cd` from a file, only directories.  This way, links have to know less about
+// their current path. To go deeper you can do this:
+//
+//     <Link to="deeper"/>
+//     // instead of
+//     <Link to=`{${props.uri}/deeper}`/>
+//
+// Just like `cd`, if you want to go deeper from the command line, you do this:
+//
+//     cd deeper
+//     # not
+//     cd $(pwd)/deeper
+//
+// By treating every path as a directory, linking to relative paths should
+// require less contextual information and (fingers crossed) be more intuitive.
+var resolve = function resolve(to, base) {
+  // /foo/bar, /baz/qux => /foo/bar
+  if (startsWith(to, "/")) {
+    return to;
+  }
+
+  var _to$split = to.split("?"),
+      toPathname = _to$split[0],
+      toQuery = _to$split[1];
+
+  var _base$split = base.split("?"),
+      basePathname = _base$split[0];
+
+  var toSegments = segmentize(toPathname);
+  var baseSegments = segmentize(basePathname);
+
+  // ?a=b, /users?b=c => /users?a=b
+  if (toSegments[0] === "") {
+    return addQuery(basePathname, toQuery);
+  }
+
+  // profile, /users/789 => /users/789/profile
+  if (!startsWith(toSegments[0], ".")) {
+    var pathname = baseSegments.concat(toSegments).join("/");
+    return addQuery((basePathname === "/" ? "" : "/") + pathname, toQuery);
+  }
+
+  // ./         /users/123  =>  /users/123
+  // ../        /users/123  =>  /users
+  // ../..      /users/123  =>  /
+  // ../../one  /a/b/c/d    =>  /a/b/one
+  // .././one   /a/b/c/d    =>  /a/b/c/one
+  var allSegments = baseSegments.concat(toSegments);
+  var segments = [];
+  for (var i = 0, l = allSegments.length; i < l; i++) {
+    var segment = allSegments[i];
+    if (segment === "..") segments.pop();else if (segment !== ".") segments.push(segment);
+  }
+
+  return addQuery("/" + segments.join("/"), toQuery);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// insertParams(path, params)
+
+var insertParams = function insertParams(path, params) {
+  var _path$split = path.split("?"),
+      pathBase = _path$split[0],
+      _path$split$ = _path$split[1],
+      query = _path$split$ === undefined ? "" : _path$split$;
+
+  var segments = segmentize(pathBase);
+  var constructedPath = "/" + segments.map(function (segment) {
+    var match = paramRe.exec(segment);
+    return match ? params[match[1]] : segment;
+  }).join("/");
+  var _params$location = params.location;
+  _params$location = _params$location === undefined ? {} : _params$location;
+  var _params$location$sear = _params$location.search,
+      search = _params$location$sear === undefined ? "" : _params$location$sear;
+
+  var searchSplit = search.split("?")[1] || "";
+  constructedPath = addQuery(constructedPath, query, searchSplit);
+  return constructedPath;
+};
+
+var validateRedirect = function validateRedirect(from, to) {
+  var filter = function filter(segment) {
+    return isDynamic(segment);
+  };
+  var fromString = segmentize(from).filter(filter).sort().join("/");
+  var toString = segmentize(to).filter(filter).sort().join("/");
+  return fromString === toString;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Junk
+var paramRe = /^:(.+)/;
+
+var SEGMENT_POINTS = 4;
+var STATIC_POINTS = 3;
+var DYNAMIC_POINTS = 2;
+var SPLAT_PENALTY = 1;
+var ROOT_POINTS = 1;
+
+var isRootSegment = function isRootSegment(segment) {
+  return segment === "";
+};
+var isDynamic = function isDynamic(segment) {
+  return paramRe.test(segment);
+};
+var isSplat = function isSplat(segment) {
+  return segment && segment[0] === "*";
+};
+
+var rankRoute = function rankRoute(route, index) {
+  var score = route.default ? 0 : segmentize(route.path).reduce(function (score, segment) {
+    score += SEGMENT_POINTS;
+    if (isRootSegment(segment)) score += ROOT_POINTS;else if (isDynamic(segment)) score += DYNAMIC_POINTS;else if (isSplat(segment)) score -= SEGMENT_POINTS + SPLAT_PENALTY;else score += STATIC_POINTS;
+    return score;
+  }, 0);
+  return { route: route, score: score, index: index };
+};
+
+var rankRoutes = function rankRoutes(routes) {
+  return routes.map(rankRoute).sort(function (a, b) {
+    return a.score < b.score ? 1 : a.score > b.score ? -1 : a.index - b.index;
+  });
+};
+
+var segmentize = function segmentize(uri) {
+  return uri
+  // strip starting/ending slashes
+  .replace(/(^\/+|\/+$)/g, "").split("/");
+};
+
+var addQuery = function addQuery(pathname) {
+  for (var _len = arguments.length, query = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    query[_key - 1] = arguments[_key];
+  }
+
+  query = query.filter(function (q) {
+    return q && q.length > 0;
+  });
+  return pathname + (query && query.length > 0 ? "?" + query.join("&") : "");
+};
+
+var reservedNames = ["uri", "path"];
+
+/**
+ * Shallow compares two objects.
+ * @param {Object} obj1 The first object to compare.
+ * @param {Object} obj2 The second object to compare.
+ */
+var shallowCompare = function shallowCompare(obj1, obj2) {
+  var obj1Keys = Object.keys(obj1);
+  return obj1Keys.length === Object.keys(obj2).length && obj1Keys.every(function (key) {
+    return obj2.hasOwnProperty(key) && obj1[key] === obj2[key];
+  });
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+/***/ }),
+
+/***/ "./node_modules/@gatsbyjs/reach-router/lib/utils.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@gatsbyjs/reach-router/lib/utils.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.shallowCompare = exports.validateRedirect = exports.insertParams = exports.resolve = exports.match = exports.pick = exports.startsWith = undefined;
+
+var _invariant = __webpack_require__(/*! invariant */ "./node_modules/invariant/invariant.js");
+
+var _invariant2 = _interopRequireDefault(_invariant);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+////////////////////////////////////////////////////////////////////////////////
+// startsWith(string, search) - Check if `string` starts with `search`
+var startsWith = function startsWith(string, search) {
+  return string.substr(0, search.length) === search;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// pick(routes, uri)
+//
+// Ranks and picks the best route to match. Each segment gets the highest
+// amount of points, then the type of segment gets an additional amount of
+// points where
+//
+//     static > dynamic > splat > root
+//
+// This way we don't have to worry about the order of our routes, let the
+// computers do it.
+//
+// A route looks like this
+//
+//     { path, default, value }
+//
+// And a returned match looks like:
+//
+//     { route, params, uri }
+//
+// I know, I should use TypeScript not comments for these types.
+var pick = function pick(routes, uri) {
+  var match = void 0;
+  var default_ = void 0;
+
+  var _uri$split = uri.split("?"),
+      uriPathname = _uri$split[0];
+
+  var uriSegments = segmentize(uriPathname);
+  var isRootUri = uriSegments[0] === "";
+  var ranked = rankRoutes(routes);
+
+  for (var i = 0, l = ranked.length; i < l; i++) {
+    var missed = false;
+    var route = ranked[i].route;
+
+    if (route.default) {
+      default_ = {
+        route: route,
+        params: {},
+        uri: uri
+      };
+      continue;
+    }
+
+    var routeSegments = segmentize(route.path);
+    var params = {};
+    var max = Math.max(uriSegments.length, routeSegments.length);
+    var index = 0;
+
+    for (; index < max; index++) {
+      var routeSegment = routeSegments[index];
+      var uriSegment = uriSegments[index];
+
+      if (isSplat(routeSegment)) {
+        // Hit a splat, just grab the rest, and return a match
+        // uri:   /files/documents/work
+        // route: /files/*
+        var param = routeSegment.slice(1) || "*";
+        params[param] = uriSegments.slice(index).map(decodeURIComponent).join("/");
+        break;
+      }
+
+      if (uriSegment === undefined) {
+        // URI is shorter than the route, no match
+        // uri:   /users
+        // route: /users/:userId
+        missed = true;
+        break;
+      }
+
+      var dynamicMatch = paramRe.exec(routeSegment);
+
+      if (dynamicMatch && !isRootUri) {
+        var matchIsNotReserved = reservedNames.indexOf(dynamicMatch[1]) === -1;
+        !matchIsNotReserved ?  true ? (0, _invariant2.default)(false, "<Router> dynamic segment \"" + dynamicMatch[1] + "\" is a reserved name. Please use a different name in path \"" + route.path + "\".") : 0 : void 0;
+        var value = decodeURIComponent(uriSegment);
+        params[dynamicMatch[1]] = value;
+      } else if (routeSegment !== uriSegment) {
+        // Current segments don't match, not dynamic, not splat, so no match
+        // uri:   /users/123/settings
+        // route: /users/:id/profile
+        missed = true;
+        break;
+      }
+    }
+
+    if (!missed) {
+      match = {
+        route: route,
+        params: params,
+        uri: "/" + uriSegments.slice(0, index).join("/")
+      };
+      break;
+    }
+  }
+
+  return match || default_ || null;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// match(path, uri) - Matches just one path to a uri, also lol
+var match = function match(path, uri) {
+  return pick([{ path: path }], uri);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// resolve(to, basepath)
+//
+// Resolves URIs as though every path is a directory, no files.  Relative URIs
+// in the browser can feel awkward because not only can you be "in a directory"
+// you can be "at a file", too. For example
+//
+//     browserSpecResolve('foo', '/bar/') => /bar/foo
+//     browserSpecResolve('foo', '/bar') => /foo
+//
+// But on the command line of a file system, it's not as complicated, you can't
+// `cd` from a file, only directories.  This way, links have to know less about
+// their current path. To go deeper you can do this:
+//
+//     <Link to="deeper"/>
+//     // instead of
+//     <Link to=`{${props.uri}/deeper}`/>
+//
+// Just like `cd`, if you want to go deeper from the command line, you do this:
+//
+//     cd deeper
+//     # not
+//     cd $(pwd)/deeper
+//
+// By treating every path as a directory, linking to relative paths should
+// require less contextual information and (fingers crossed) be more intuitive.
+var resolve = function resolve(to, base) {
+  // /foo/bar, /baz/qux => /foo/bar
+  if (startsWith(to, "/")) {
+    return to;
+  }
+
+  var _to$split = to.split("?"),
+      toPathname = _to$split[0],
+      toQuery = _to$split[1];
+
+  var _base$split = base.split("?"),
+      basePathname = _base$split[0];
+
+  var toSegments = segmentize(toPathname);
+  var baseSegments = segmentize(basePathname);
+
+  // ?a=b, /users?b=c => /users?a=b
+  if (toSegments[0] === "") {
+    return addQuery(basePathname, toQuery);
+  }
+
+  // profile, /users/789 => /users/789/profile
+  if (!startsWith(toSegments[0], ".")) {
+    var pathname = baseSegments.concat(toSegments).join("/");
+    return addQuery((basePathname === "/" ? "" : "/") + pathname, toQuery);
+  }
+
+  // ./         /users/123  =>  /users/123
+  // ../        /users/123  =>  /users
+  // ../..      /users/123  =>  /
+  // ../../one  /a/b/c/d    =>  /a/b/one
+  // .././one   /a/b/c/d    =>  /a/b/c/one
+  var allSegments = baseSegments.concat(toSegments);
+  var segments = [];
+  for (var i = 0, l = allSegments.length; i < l; i++) {
+    var segment = allSegments[i];
+    if (segment === "..") segments.pop();else if (segment !== ".") segments.push(segment);
+  }
+
+  return addQuery("/" + segments.join("/"), toQuery);
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// insertParams(path, params)
+
+var insertParams = function insertParams(path, params) {
+  var _path$split = path.split("?"),
+      pathBase = _path$split[0],
+      _path$split$ = _path$split[1],
+      query = _path$split$ === undefined ? "" : _path$split$;
+
+  var segments = segmentize(pathBase);
+  var constructedPath = "/" + segments.map(function (segment) {
+    var match = paramRe.exec(segment);
+    return match ? params[match[1]] : segment;
+  }).join("/");
+  var _params$location = params.location;
+  _params$location = _params$location === undefined ? {} : _params$location;
+  var _params$location$sear = _params$location.search,
+      search = _params$location$sear === undefined ? "" : _params$location$sear;
+
+  var searchSplit = search.split("?")[1] || "";
+  constructedPath = addQuery(constructedPath, query, searchSplit);
+  return constructedPath;
+};
+
+var validateRedirect = function validateRedirect(from, to) {
+  var filter = function filter(segment) {
+    return isDynamic(segment);
+  };
+  var fromString = segmentize(from).filter(filter).sort().join("/");
+  var toString = segmentize(to).filter(filter).sort().join("/");
+  return fromString === toString;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Junk
+var paramRe = /^:(.+)/;
+
+var SEGMENT_POINTS = 4;
+var STATIC_POINTS = 3;
+var DYNAMIC_POINTS = 2;
+var SPLAT_PENALTY = 1;
+var ROOT_POINTS = 1;
+
+var isRootSegment = function isRootSegment(segment) {
+  return segment === "";
+};
+var isDynamic = function isDynamic(segment) {
+  return paramRe.test(segment);
+};
+var isSplat = function isSplat(segment) {
+  return segment && segment[0] === "*";
+};
+
+var rankRoute = function rankRoute(route, index) {
+  var score = route.default ? 0 : segmentize(route.path).reduce(function (score, segment) {
+    score += SEGMENT_POINTS;
+    if (isRootSegment(segment)) score += ROOT_POINTS;else if (isDynamic(segment)) score += DYNAMIC_POINTS;else if (isSplat(segment)) score -= SEGMENT_POINTS + SPLAT_PENALTY;else score += STATIC_POINTS;
+    return score;
+  }, 0);
+  return { route: route, score: score, index: index };
+};
+
+var rankRoutes = function rankRoutes(routes) {
+  return routes.map(rankRoute).sort(function (a, b) {
+    return a.score < b.score ? 1 : a.score > b.score ? -1 : a.index - b.index;
+  });
+};
+
+var segmentize = function segmentize(uri) {
+  return uri
+  // strip starting/ending slashes
+  .replace(/(^\/+|\/+$)/g, "").split("/");
+};
+
+var addQuery = function addQuery(pathname) {
+  for (var _len = arguments.length, query = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    query[_key - 1] = arguments[_key];
+  }
+
+  query = query.filter(function (q) {
+    return q && q.length > 0;
+  });
+  return pathname + (query && query.length > 0 ? "?" + query.join("&") : "");
+};
+
+var reservedNames = ["uri", "path"];
+
+/**
+ * Shallow compares two objects.
+ * @param {Object} obj1 The first object to compare.
+ * @param {Object} obj2 The second object to compare.
+ */
+var shallowCompare = function shallowCompare(obj1, obj2) {
+  var obj1Keys = Object.keys(obj1);
+  return obj1Keys.length === Object.keys(obj2).length && obj1Keys.every(function (key) {
+    return obj2.hasOwnProperty(key) && obj1[key] === obj2[key];
+  });
+};
+
+////////////////////////////////////////////////////////////////////////////////
+exports.startsWith = startsWith;
+exports.pick = pick;
+exports.match = match;
+exports.resolve = resolve;
+exports.insertParams = insertParams;
+exports.validateRedirect = validateRedirect;
+exports.shallowCompare = shallowCompare;
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
 /***/ ((module, exports) => {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -66,11 +988,14 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 2988:
+/***/ "./node_modules/enquire.js/src/MediaQuery.js":
+/*!***************************************************!*\
+  !*** ./node_modules/enquire.js/src/MediaQuery.js ***!
+  \***************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var QueryHandler = __webpack_require__(1755);
-var each = (__webpack_require__(6665).each);
+var QueryHandler = __webpack_require__(/*! ./QueryHandler */ "./node_modules/enquire.js/src/QueryHandler.js");
+var each = (__webpack_require__(/*! ./Util */ "./node_modules/enquire.js/src/Util.js").each);
 
 /**
  * Represents a single media query, manages it's state and registered handlers for this query
@@ -166,11 +1091,14 @@ module.exports = MediaQuery;
 
 /***/ }),
 
-/***/ 8177:
+/***/ "./node_modules/enquire.js/src/MediaQueryDispatch.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/enquire.js/src/MediaQueryDispatch.js ***!
+  \***********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var MediaQuery = __webpack_require__(2988);
-var Util = __webpack_require__(6665);
+var MediaQuery = __webpack_require__(/*! ./MediaQuery */ "./node_modules/enquire.js/src/MediaQuery.js");
+var Util = __webpack_require__(/*! ./Util */ "./node_modules/enquire.js/src/Util.js");
 var each = Util.each;
 var isFunction = Util.isFunction;
 var isArray = Util.isArray;
@@ -258,7 +1186,10 @@ module.exports = MediaQueryDispatch;
 
 /***/ }),
 
-/***/ 1755:
+/***/ "./node_modules/enquire.js/src/QueryHandler.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/enquire.js/src/QueryHandler.js ***!
+  \*****************************************************/
 /***/ ((module) => {
 
 /**
@@ -339,7 +1270,10 @@ module.exports = QueryHandler;
 
 /***/ }),
 
-/***/ 6665:
+/***/ "./node_modules/enquire.js/src/Util.js":
+/*!*********************************************!*\
+  !*** ./node_modules/enquire.js/src/Util.js ***!
+  \*********************************************/
 /***/ ((module) => {
 
 /**
@@ -390,81 +1324,1741 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4974:
+/***/ "./node_modules/enquire.js/src/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/enquire.js/src/index.js ***!
+  \**********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var MediaQueryDispatch = __webpack_require__(8177);
+var MediaQueryDispatch = __webpack_require__(/*! ./MediaQueryDispatch */ "./node_modules/enquire.js/src/MediaQueryDispatch.js");
 module.exports = new MediaQueryDispatch();
 
 
 /***/ }),
 
-/***/ 4480:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./.cache/react-lifecycles-compat.js":
+/*!*******************************************!*\
+  !*** ./.cache/react-lifecycles-compat.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports) => {
 
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ pages)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(7294);
-// EXTERNAL MODULE: ./node_modules/gatsby-link/index.js
-var gatsby_link = __webpack_require__(8902);
-;// CONCATENATED MODULE: ./src/components/Navigation.js
-const isCurrent=(anchor,pathname)=>pathname.endsWith(anchor)?'current':'';class Navigation extends react.Component{constructor(...args){super(...args);this.state={pathname:'#home'};}componentDidMount(){window.addEventListener('hashchange',()=>{this.setState({pathname:window.location.href});});}render(){const{pathname=''}=this.state;return/*#__PURE__*/react.createElement("nav",{id:"nav-wrap"},/*#__PURE__*/react.createElement("a",{className:"mobile-btn",href:"#nav-wrap"}),/*#__PURE__*/react.createElement("ul",{id:"nav",className:"nav"},/*#__PURE__*/react.createElement("li",{className:isCurrent('#home',pathname)},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#home"},"Home")),/*#__PURE__*/react.createElement("li",{className:isCurrent('#about',pathname)},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#about"},"Pastor")),/*#__PURE__*/react.createElement("li",{className:isCurrent('#resume',pathname)},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#resume"},"Mission")),/*#__PURE__*/react.createElement("li",{className:isCurrent('#skills',pathname)},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#skills"},"Ministry")),/*#__PURE__*/react.createElement("li",{className:isCurrent('#testimonials',pathname)},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#testimonials"},"Testimonials")),/*#__PURE__*/react.createElement("li",{className:isCurrent('#footer',pathname)},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#footer"},"Footer"))));}};/* harmony default export */ const components_Navigation = (Navigation);
-;// CONCATENATED MODULE: ./src/components/SocialLinks.js
-const SocialLinks=()=>/*#__PURE__*/react.createElement("ul",{className:"social"},/*#__PURE__*/react.createElement("li",null,/*#__PURE__*/react.createElement("a",{href:"https://www.linkedin.com/in/candace-collins-83030b71/"})));/* harmony default export */ const components_SocialLinks = (SocialLinks);
-;// CONCATENATED MODULE: ./src/components/Banner.js
-const Banner=()=>/*#__PURE__*/react.createElement("div",{className:"row banner"},/*#__PURE__*/react.createElement("div",{className:"banner-text"},/*#__PURE__*/react.createElement("h1",{className:"responsive-headline"},"Faith Community Foursquare Church"),/*#__PURE__*/react.createElement("h2",null,"A Foursquare Gospel Church"),/*#__PURE__*/react.createElement("h2",null,/*#__PURE__*/react.createElement("span",null,"Rev. D.T. Paredes"),",",/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#about"}," ")," ",/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#about"}," ","Senior Pastor")),/*#__PURE__*/react.createElement("hr",null),/*#__PURE__*/react.createElement(components_SocialLinks,null)));/* harmony default export */ const components_Banner = (Banner);
-;// CONCATENATED MODULE: ./src/components/ScrollDown.js
-const ScrollDown=()=>/*#__PURE__*/react.createElement("p",{className:"scrolldown"},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",href:"#about"}));/* harmony default export */ const components_ScrollDown = (ScrollDown);
-;// CONCATENATED MODULE: ./src/components/Header.js
-const Header=()=>/*#__PURE__*/react.createElement("header",{id:"home"},/*#__PURE__*/react.createElement(components_Navigation,null),/*#__PURE__*/react.createElement(components_Banner,null),/*#__PURE__*/react.createElement(components_ScrollDown,null));/* harmony default export */ const components_Header = (Header);
-;// CONCATENATED MODULE: ./src/assets/images/profilepic.jpg
-/* harmony default export */ const profilepic = ("data:image/jpeg;base64,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");
-;// CONCATENATED MODULE: ./src/components/About.js
-// import { FaCloudDownload } from "react-icons/lib/fa";
-const About=()=>/*#__PURE__*/react.createElement("section",{id:"about"},/*#__PURE__*/react.createElement("div",{className:"row"},/*#__PURE__*/react.createElement("div",{className:"three columns"},/*#__PURE__*/react.createElement("img",{className:"profile-pic",src:profilepic,alt:""})),/*#__PURE__*/react.createElement("div",{className:"nine columns main-col"},/*#__PURE__*/react.createElement("h2",null,"Our Pastor"),/*#__PURE__*/react.createElement("h4",null,/*#__PURE__*/react.createElement("p",null,"Rev. D.T. Paredes has had the honor of preaching, teaching, and singing the Gospel of Jesus Christ from South Central Los Angeles to Cape Town, South Africa. Rev. Paredes, a native of Los Angeles, CA has served for 17 years as a Christian School Educator and 30 consecutive years as a Senior Pastor in The International Church of the  Foursquare Gospel, serving in the heart of the inner-city of Los Angeles. Rev. D.T. Paredes was academically prepared at both L.I.F.E. Bible College and Fuller Theological Seminary.  Rev. D.T. Paredes has taught and trained pastors and leaders internationally. Through Music and Ministry, the doors of opportunity have been opened across the globe. Rev. Paredes has traveled to Five continents and sung at some of the world's most celebrated music venues; from New York's Legendary Carnegie Hall to U.C.L.A.\u2019s Historic Royce Hall, as well as some of the great Concert Halls of the United Kingdom, including working with The Royal Philharmonic Orchestra and recording at the legendary Abbey Road Studio. Rev. Paredes also has a long history of fruitfulness in the area of Discipleship and Community Development.  His work in the area of Community Development as a Board Member of the West Angeles Church of God In Christ CDC (Community Development Corporation) has been distinguished by being written into the Congregational Record of The United States of America (Currently on file in The United States Library of Congress.) His legacy of discipleship began nearly twenty years prior to the beginning of his \u201Cformal\u201D pastorate and spans well over two generations. Even with his long history of service, \u201CPastor\u201D as he is lovingly called; is still passionate about people and letting them know that no matter how disenfranchised or disqualified they may feel, they are truly\u2026 \u201CAccepted in the Beloved!\u201D  Ephesians 1:6")),/*#__PURE__*/react.createElement("iframe",{width:"560",height:"315",src:"https://www.youtube.com/embed/5opQ98WOhLo",title:"YouTube video player",frameborder:"0",allow:"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",allowfullscreen:true}),/*#__PURE__*/react.createElement("div",{className:"row"},/*#__PURE__*/react.createElement("div",{className:"columns contact-details"},/*#__PURE__*/react.createElement("h2",null,"Contact Details"),/*#__PURE__*/react.createElement("h3",null,/*#__PURE__*/react.createElement("p",{className:"address"},/*#__PURE__*/react.createElement("span",null,"Faith Community Foursquare Church"),/*#__PURE__*/react.createElement("br",null),/*#__PURE__*/react.createElement("span",null,"Sunday Morning Service 10am"),/*#__PURE__*/react.createElement("br",null),/*#__PURE__*/react.createElement("span",null,/*#__PURE__*/react.createElement("br",null)," 5519 Avalon Blvd."),/*#__PURE__*/react.createElement("span",null,/*#__PURE__*/react.createElement("br",null)," Los Angeles, CA 90011 US"),/*#__PURE__*/react.createElement("span",null,"Wednesday Night Bible Study via Zoom "),/*#__PURE__*/react.createElement("br",null),/*#__PURE__*/react.createElement("br",null))))))));/* harmony default export */ const components_About = (About);
-;// CONCATENATED MODULE: ./src/components/Education.js
-const Education=()=>/*#__PURE__*/react.createElement("div",{className:"row education"},/*#__PURE__*/react.createElement("div",{className:"three columns header-col"},/*#__PURE__*/react.createElement("h1",null,/*#__PURE__*/react.createElement("span",null,"Mission"))),/*#__PURE__*/react.createElement("div",{className:"nine columns main-col"},/*#__PURE__*/react.createElement("div",{className:"row item"},/*#__PURE__*/react.createElement("div",{className:"twelve columns"},/*#__PURE__*/react.createElement("p",{className:"info"},/*#__PURE__*/react.createElement("h4",null,"Our Mission is to Build a Community of Faith that is motivated by Love, that is Evangelistic in Zeal that Operates in the Principles and Teachings of the Holy Bible; where people find and live out their Divine Purpose and Fulfill the Great Commission."),/*#__PURE__*/react.createElement("span",null,"\u2022"))))));/* harmony default export */ const components_Education = (Education);
-;// CONCATENATED MODULE: ./src/components/Work.js
-const Work=()=>/*#__PURE__*/react.createElement("div",{className:"row work"},/*#__PURE__*/react.createElement("div",{className:"three columns header-col"},/*#__PURE__*/react.createElement("h1",null,/*#__PURE__*/react.createElement("span",null,"Core Values"))),/*#__PURE__*/react.createElement("div",{className:"nine columns main-col"},/*#__PURE__*/react.createElement("div",{className:"row item"},/*#__PURE__*/react.createElement("div",{className:"twelve columns"},/*#__PURE__*/react.createElement("p",{className:"info"},/*#__PURE__*/react.createElement("span",null,"\u2022")),/*#__PURE__*/react.createElement("h4",null,/*#__PURE__*/react.createElement("li",null,"The Word of God"),/*#__PURE__*/react.createElement("li",null,"The Love of God"),/*#__PURE__*/react.createElement("li",null,"The Move of the Holy Spirit"),/*#__PURE__*/react.createElement("li",null,"Spiritual Maturity"),/*#__PURE__*/react.createElement("li",null,"Unity"),/*#__PURE__*/react.createElement("li",null,"Loyalty"),/*#__PURE__*/react.createElement("li",null,"Fruitfulness"),/*#__PURE__*/react.createElement("li",null,"Excellence"),/*#__PURE__*/react.createElement("li",null,"Teachableness"),/*#__PURE__*/react.createElement("li",null,"Hospitality / Courtesy")))),/*#__PURE__*/react.createElement("div",{className:"row item"})));/* harmony default export */ const components_Work = (Work);
-;// CONCATENATED MODULE: ./src/components/Resume.js
-// import Skills from "./Skills";
-const Resume=()=>/*#__PURE__*/react.createElement("section",{id:"resume"},/*#__PURE__*/react.createElement(components_Education,null),/*#__PURE__*/react.createElement(components_Work,null));/* harmony default export */ const components_Resume = (Resume);
-;// CONCATENATED MODULE: ./src/assets/images/ancient.png
-/* harmony default export */ const ancient = (__webpack_require__.p + "static/ancient-182ced164503dbdd279f48f9ed7f2fa3.png");
-;// CONCATENATED MODULE: ./src/assets/images/pastoranddoctor.jpg
-/* harmony default export */ const pastoranddoctor = (__webpack_require__.p + "static/pastoranddoctor-6985418eda6a134d72db0964fc489d00.jpg");
-;// CONCATENATED MODULE: ./src/assets/images/youngmen.jpg
-/* harmony default export */ const youngmen = (__webpack_require__.p + "static/youngmen-f8deeb30ad58d86a24796d6ddaade64e.jpg");
-;// CONCATENATED MODULE: ./src/assets/images/deacons.jpg
-/* harmony default export */ const deacons = (__webpack_require__.p + "static/deacons-cda99ec458df030fb4641152ef11888a.jpg");
-;// CONCATENATED MODULE: ./src/assets/images/foursquareicons.png
-/* harmony default export */ const foursquareicons = ("data:image/png;base64,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");
-;// CONCATENATED MODULE: ./src/components/Skills.js
-const Skills=()=>/*#__PURE__*/react.createElement("div",{className:"row skill"},/*#__PURE__*/react.createElement("h1",null,/*#__PURE__*/react.createElement("span",null,"Ministry")),/*#__PURE__*/react.createElement("div",{className:"banner-text"},/*#__PURE__*/react.createElement("img",{src:foursquareicons,alt:""})),/*#__PURE__*/react.createElement("div",{className:"three columns"},/*#__PURE__*/react.createElement("img",{src:pastoranddoctor,alt:""}),/*#__PURE__*/react.createElement("img",{src:deacons,alt:""}),/*#__PURE__*/react.createElement("img",{src:ancient,alt:""}),/*#__PURE__*/react.createElement("img",{src:youngmen,alt:""})),/*#__PURE__*/react.createElement("div",{className:"nine columns main-col"},/*#__PURE__*/react.createElement("div",{className:"bars"},/*#__PURE__*/react.createElement("h4",null,/*#__PURE__*/react.createElement("p",null,"The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to..."),/*#__PURE__*/react.createElement("ul",null,"-IN DEPTH STUDY OF GOD'S WORD -MUSIC -FOOD FELLOWSHIP -COMMUNITY OUTREACH AND EDUCATION -DRAMA: 'The Faith Community Players' -COUNSELING and MORE"),/*#__PURE__*/react.createElement("p",null,"One of Our Strengths is Our Willingness to \"Submit to One Another in Love\" Ephesians 5:21"),/*#__PURE__*/react.createElement("p",null,"Rev. D.T. Paredes and Dr. Mardra J. Paredes are 'A Brother and Sister Ministry Team' that Serve as Senior Pastor and Assistant Pastor; Respectively."),/*#__PURE__*/react.createElement("br",null),/*#__PURE__*/react.createElement("h2",null,"Why attend the Faith Community Foursquare Church?"),/*#__PURE__*/react.createElement("br",null),/*#__PURE__*/react.createElement("p",null,"For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "),/*#__PURE__*/react.createElement("p",null,"The FOURSQUARE GOSPEL reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.  \"Jesus Christ the same yesterday, and today, and forever\" Heb 13:8 ")),/*#__PURE__*/react.createElement("br",null))));/* harmony default export */ const components_Skills = (Skills);
-// EXTERNAL MODULE: ./node_modules/react-slick/lib/index.js
-var lib = __webpack_require__(6066);
-;// CONCATENATED MODULE: ./src/components/Testimonials.js
-const settings={// dots: true,
-infinite:true,autoplay:true,speed:500,slideToShow:1,slideToScroll:1,swipeToSlide:true};const Testimonials=()=>/*#__PURE__*/react.createElement("section",{id:"testimonials"},/*#__PURE__*/react.createElement("div",{className:"text-container"},/*#__PURE__*/react.createElement("div",{className:"row"},/*#__PURE__*/react.createElement("div",{className:"two columns header-col"}),/*#__PURE__*/react.createElement("div",{className:"ten columns"},/*#__PURE__*/react.createElement("h1",null,"Testimonials"),/*#__PURE__*/react.createElement("ul",null,/*#__PURE__*/react.createElement("li",null,/*#__PURE__*/react.createElement("blockquote",null,/*#__PURE__*/react.createElement("p",null,"We celebrate with you, Pastor Terry Paredes your family is Godly Proud of you and all of your work in the ministry over these last 54 years.  To God be the glory for the things he has done through your life thus far, BUT THE BEST IS YET TO COME!!!"),/*#__PURE__*/react.createElement("cite",null,"Marcus, Teddi, Randi and Jeanine"))),/*#__PURE__*/react.createElement("li",null,/*#__PURE__*/react.createElement("blockquote",null,/*#__PURE__*/react.createElement("p",null,"Sincere congratulations to Pastor D.T. Paredes on 30 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come."),/*#__PURE__*/react.createElement("cite",null,"Betty Dixon, Pico Pre-School "))))))));/* harmony default export */ const components_Testimonials = (Testimonials);
-;// CONCATENATED MODULE: ./src/components/Footer.js
-const Footer=()=>/*#__PURE__*/react.createElement("footer",{id:"footer"},/*#__PURE__*/react.createElement("div",{className:"row"},/*#__PURE__*/react.createElement("div",{className:"twelve columns"},/*#__PURE__*/react.createElement(components_SocialLinks,null),/*#__PURE__*/react.createElement("ul",{className:"copyright"},/*#__PURE__*/react.createElement("h5",null,/*#__PURE__*/react.createElement("li",null,"\xA9 Faith Community Foursquare Church"),/*#__PURE__*/react.createElement("li",null),/*#__PURE__*/react.createElement("li",null,"Developed in React \u269B\uFE0F by",' ',/*#__PURE__*/react.createElement("a",{href:"http://www.74thstreet.net"},"Aaron Harris"))))),/*#__PURE__*/react.createElement("div",{id:"go-top"},/*#__PURE__*/react.createElement("a",{className:"smoothscroll",title:"Back to Top",href:"#home"}))));/* harmony default export */ const components_Footer = (Footer);
-;// CONCATENATED MODULE: ./src/pages/index.js
-const IndexPage=()=>/*#__PURE__*/react.createElement("div",null,/*#__PURE__*/react.createElement(components_Header,null),/*#__PURE__*/react.createElement(components_About,null),/*#__PURE__*/react.createElement(components_Resume,null),/*#__PURE__*/react.createElement(components_Skills,null),/*#__PURE__*/react.createElement(components_Testimonials,null),/*#__PURE__*/react.createElement(components_Footer,null));/* harmony default export */ const pages = (IndexPage);
+exports.polyfill = Component => Component;
 
 /***/ }),
 
-/***/ 973:
+/***/ "./node_modules/gatsby-link/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/gatsby-link/index.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+exports.__esModule = true;
+exports.withPrefix = withPrefix;
+exports.withAssetPrefix = withAssetPrefix;
+exports.navigate = exports["default"] = void 0;
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js"));
+
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js"));
+
+var _inheritsLoose2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js"));
+
+var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+
+var _reachRouter = __webpack_require__(/*! @gatsbyjs/reach-router */ "./node_modules/@gatsbyjs/reach-router/es/index.js");
+
+var _utils = __webpack_require__(/*! @gatsbyjs/reach-router/lib/utils */ "./node_modules/@gatsbyjs/reach-router/lib/utils.js");
+
+var _parsePath = __webpack_require__(/*! ./parse-path */ "./node_modules/gatsby-link/parse-path.js");
+
+exports.parsePath = _parsePath.parsePath;
+var _excluded = ["to", "getProps", "onClick", "onMouseEnter", "activeClassName", "activeStyle", "innerRef", "partiallyActive", "state", "replace", "_location"];
+
+var isAbsolutePath = function isAbsolutePath(path) {
+  return path === null || path === void 0 ? void 0 : path.startsWith("/");
+};
+
+function withPrefix(path, prefix) {
+  var _ref, _prefix;
+
+  if (prefix === void 0) {
+    prefix = getGlobalBasePrefix();
+  }
+
+  if (!isLocalLink(path)) {
+    return path;
+  }
+
+  if (path.startsWith("./") || path.startsWith("../")) {
+    return path;
+  }
+
+  var base = (_ref = (_prefix = prefix) !== null && _prefix !== void 0 ? _prefix : getGlobalPathPrefix()) !== null && _ref !== void 0 ? _ref : "/";
+  return "" + (base !== null && base !== void 0 && base.endsWith("/") ? base.slice(0, -1) : base) + (path.startsWith("/") ? path : "/" + path);
+} // These global values are wrapped in typeof clauses to ensure the values exist.
+// This is especially problematic in unit testing of this component.
+
+
+var getGlobalPathPrefix = function getGlobalPathPrefix() {
+  return  true ?  true ? "" : 0 : 0;
+};
+
+var getGlobalBasePrefix = function getGlobalBasePrefix() {
+  return  true ?  true ? "" : 0 : 0;
+};
+
+var isLocalLink = function isLocalLink(path) {
+  return path && !path.startsWith("http://") && !path.startsWith("https://") && !path.startsWith("//");
+};
+
+function withAssetPrefix(path) {
+  return withPrefix(path, getGlobalPathPrefix());
+}
+
+function absolutify(path, current) {
+  // If it's already absolute, return as-is
+  if (isAbsolutePath(path)) {
+    return path;
+  }
+
+  return (0, _utils.resolve)(path, current);
+}
+
+var rewriteLinkPath = function rewriteLinkPath(path, relativeTo) {
+  if (typeof path === "number") {
+    return path;
+  }
+
+  if (!isLocalLink(path)) {
+    return path;
+  }
+
+  return isAbsolutePath(path) ? withPrefix(path) : absolutify(path, relativeTo);
+};
+
+var NavLinkPropTypes = {
+  activeClassName: _propTypes.default.string,
+  activeStyle: _propTypes.default.object,
+  partiallyActive: _propTypes.default.bool
+}; // Set up IntersectionObserver
+
+var createIntersectionObserver = function createIntersectionObserver(el, cb) {
+  var io = new window.IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (el === entry.target) {
+        // Check if element is within viewport, remove listener, destroy observer, and run link callback.
+        // MSEdge doesn't currently support isIntersecting, so also test for  an intersectionRatio > 0
+        cb(entry.isIntersecting || entry.intersectionRatio > 0);
+      }
+    });
+  }); // Add element to the observer
+
+  io.observe(el);
+  return {
+    instance: io,
+    el: el
+  };
+};
+
+function GatsbyLinkLocationWrapper(props) {
+  return /*#__PURE__*/_react.default.createElement(_reachRouter.Location, null, function (_ref2) {
+    var location = _ref2.location;
+    return /*#__PURE__*/_react.default.createElement(GatsbyLink, (0, _extends2.default)({}, props, {
+      _location: location
+    }));
+  });
+}
+
+var GatsbyLink = /*#__PURE__*/function (_React$Component) {
+  (0, _inheritsLoose2.default)(GatsbyLink, _React$Component);
+
+  function GatsbyLink(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this; // Default to no support for IntersectionObserver
+
+    _this.defaultGetProps = function (_ref3) {
+      var isPartiallyCurrent = _ref3.isPartiallyCurrent,
+          isCurrent = _ref3.isCurrent;
+
+      if (_this.props.partiallyActive ? isPartiallyCurrent : isCurrent) {
+        return {
+          className: [_this.props.className, _this.props.activeClassName].filter(Boolean).join(" "),
+          style: (0, _extends2.default)({}, _this.props.style, _this.props.activeStyle)
+        };
+      }
+
+      return null;
+    };
+
+    var IOSupported = false;
+
+    if (typeof window !== "undefined" && window.IntersectionObserver) {
+      IOSupported = true;
+    }
+
+    _this.state = {
+      IOSupported: IOSupported
+    };
+    _this.abortPrefetch = null;
+    _this.handleRef = _this.handleRef.bind((0, _assertThisInitialized2.default)(_this));
+    return _this;
+  }
+
+  var _proto = GatsbyLink.prototype;
+
+  _proto._prefetch = function _prefetch() {
+    var currentPath = window.location.pathname + window.location.search; // reach router should have the correct state
+
+    if (this.props._location && this.props._location.pathname) {
+      currentPath = this.props._location.pathname + this.props._location.search;
+    }
+
+    var rewrittenPath = rewriteLinkPath(this.props.to, currentPath);
+    var parsed = (0, _parsePath.parsePath)(rewrittenPath);
+    var newPathName = parsed.pathname + parsed.search; // Prefetch is used to speed up next navigations. When you use it on the current navigation,
+    // there could be a race-condition where Chrome uses the stale data instead of waiting for the network to complete
+
+    if (currentPath !== newPathName) {
+      return ___loader.enqueue(newPathName);
+    }
+
+    return undefined;
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    if (!this.io) {
+      return;
+    }
+
+    var _this$io = this.io,
+        instance = _this$io.instance,
+        el = _this$io.el;
+
+    if (this.abortPrefetch) {
+      this.abortPrefetch.abort();
+    }
+
+    instance.unobserve(el);
+    instance.disconnect();
+  };
+
+  _proto.handleRef = function handleRef(ref) {
+    var _this2 = this;
+
+    if (this.props.innerRef && Object.prototype.hasOwnProperty.call(this.props.innerRef, "current")) {
+      this.props.innerRef.current = ref;
+    } else if (this.props.innerRef) {
+      this.props.innerRef(ref);
+    }
+
+    if (this.state.IOSupported && ref) {
+      // If IO supported and element reference found, setup Observer functionality
+      this.io = createIntersectionObserver(ref, function (inViewPort) {
+        if (inViewPort) {
+          _this2.abortPrefetch = _this2._prefetch();
+        } else {
+          if (_this2.abortPrefetch) {
+            _this2.abortPrefetch.abort();
+          }
+        }
+      });
+    }
+  };
+
+  _proto.render = function render() {
+    var _this3 = this;
+
+    var _this$props = this.props,
+        to = _this$props.to,
+        _this$props$getProps = _this$props.getProps,
+        getProps = _this$props$getProps === void 0 ? this.defaultGetProps : _this$props$getProps,
+        _onClick = _this$props.onClick,
+        _onMouseEnter = _this$props.onMouseEnter,
+        $activeClassName = _this$props.activeClassName,
+        $activeStyle = _this$props.activeStyle,
+        $innerRef = _this$props.innerRef,
+        partiallyActive = _this$props.partiallyActive,
+        state = _this$props.state,
+        replace = _this$props.replace,
+        _location = _this$props._location,
+        rest = (0, _objectWithoutPropertiesLoose2.default)(_this$props, _excluded);
+
+    if ( true && !isLocalLink(to)) {
+      console.warn("External link " + to + " was detected in a Link component. Use the Link component only for internal links. See: https://gatsby.dev/internal-links");
+    }
+
+    var prefixedTo = rewriteLinkPath(to, _location.pathname);
+
+    if (!isLocalLink(prefixedTo)) {
+      return /*#__PURE__*/_react.default.createElement("a", (0, _extends2.default)({
+        href: prefixedTo
+      }, rest));
+    }
+
+    return /*#__PURE__*/_react.default.createElement(_reachRouter.Link, (0, _extends2.default)({
+      to: prefixedTo,
+      state: state,
+      getProps: getProps,
+      innerRef: this.handleRef,
+      onMouseEnter: function onMouseEnter(e) {
+        if (_onMouseEnter) {
+          _onMouseEnter(e);
+        }
+
+        var parsed = (0, _parsePath.parsePath)(prefixedTo);
+
+        ___loader.hovering(parsed.pathname + parsed.search);
+      },
+      onClick: function onClick(e) {
+        if (_onClick) {
+          _onClick(e);
+        }
+
+        if (e.button === 0 && // ignore right clicks
+        !_this3.props.target && // let browser handle "target=_blank"
+        !e.defaultPrevented && // onClick prevented default
+        !e.metaKey && // ignore clicks with modifier keys...
+        !e.altKey && !e.ctrlKey && !e.shiftKey) {
+          e.preventDefault();
+          var shouldReplace = replace;
+
+          var isCurrent = encodeURI(prefixedTo) === _location.pathname;
+
+          if (typeof replace !== "boolean" && isCurrent) {
+            shouldReplace = true;
+          } // Make sure the necessary scripts and data are
+          // loaded before continuing.
+
+
+          window.___navigate(prefixedTo, {
+            state: state,
+            replace: shouldReplace
+          });
+        }
+
+        return true;
+      }
+    }, rest));
+  };
+
+  return GatsbyLink;
+}(_react.default.Component);
+
+GatsbyLink.propTypes = (0, _extends2.default)({}, NavLinkPropTypes, {
+  onClick: _propTypes.default.func,
+  to: _propTypes.default.string.isRequired,
+  replace: _propTypes.default.bool,
+  state: _propTypes.default.object
+});
+
+var _default = /*#__PURE__*/_react.default.forwardRef(function (props, ref) {
+  return /*#__PURE__*/_react.default.createElement(GatsbyLinkLocationWrapper, (0, _extends2.default)({
+    innerRef: ref
+  }, props));
+});
+
+exports["default"] = _default;
+
+var navigate = function navigate(to, options) {
+  window.___navigate(rewriteLinkPath(to, window.location.pathname), options);
+};
+
+exports.navigate = navigate;
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-link/parse-path.js":
+/*!************************************************!*\
+  !*** ./node_modules/gatsby-link/parse-path.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.parsePath = parsePath;
+
+function parsePath(path) {
+  var pathname = path || "/";
+  var search = "";
+  var hash = "";
+  var hashIndex = pathname.indexOf("#");
+
+  if (hashIndex !== -1) {
+    hash = pathname.substr(hashIndex);
+    pathname = pathname.substr(0, hashIndex);
+  }
+
+  var searchIndex = pathname.indexOf("?");
+
+  if (searchIndex !== -1) {
+    search = pathname.substr(searchIndex);
+    pathname = pathname.substr(0, searchIndex);
+  }
+
+  return {
+    pathname: pathname,
+    search: search === "?" ? "" : search,
+    hash: hash === "#" ? "" : hash
+  };
+}
+
+/***/ }),
+
+/***/ "./src/components/About.js":
+/*!*********************************!*\
+  !*** ./src/components/About.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_images_profilepic_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/images/profilepic.jpg */ "./src/assets/images/profilepic.jpg");
+ // import { FaCloudDownload } from "react-icons/lib/fa";
+
+
+
+const About = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  id: "about"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "three columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  className: "profile-pic",
+  src: _assets_images_profilepic_jpg__WEBPACK_IMPORTED_MODULE_1__["default"],
+  alt: ""
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "nine columns main-col"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Our Pastor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Rev. D.T. Paredes has had the honor of preaching, teaching, and singing the Gospel of Jesus Christ from South Central Los Angeles to Cape Town, South Africa. Rev. Paredes, a native of Los Angeles, CA has served for 17 years as a Christian School Educator and 30 consecutive years as a Senior Pastor in The International Church of the  Foursquare Gospel, serving in the heart of the inner-city of Los Angeles. Rev. D.T. Paredes was academically prepared at both L.I.F.E. Bible College and Fuller Theological Seminary.  Rev. D.T. Paredes has taught and trained pastors and leaders internationally. Through Music and Ministry, the doors of opportunity have been opened across the globe. Rev. Paredes has traveled to Five continents and sung at some of the world's most celebrated music venues; from New York's Legendary Carnegie Hall to U.C.L.A.\u2019s Historic Royce Hall, as well as some of the great Concert Halls of the United Kingdom, including working with The Royal Philharmonic Orchestra and recording at the legendary Abbey Road Studio. Rev. Paredes also has a long history of fruitfulness in the area of Discipleship and Community Development.  His work in the area of Community Development as a Board Member of the West Angeles Church of God In Christ CDC (Community Development Corporation) has been distinguished by being written into the Congregational Record of The United States of America (Currently on file in The United States Library of Congress.) His legacy of discipleship began nearly twenty years prior to the beginning of his \u201Cformal\u201D pastorate and spans well over two generations. Even with his long history of service, \u201CPastor\u201D as he is lovingly called; is still passionate about people and letting them know that no matter how disenfranchised or disqualified they may feel, they are truly\u2026 \u201CAccepted in the Beloved!\u201D  Ephesians 1:6")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
+  width: "560",
+  height: "315",
+  src: "https://www.youtube.com/embed/5opQ98WOhLo",
+  title: "YouTube video player",
+  frameborder: "0",
+  allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+  allowfullscreen: true
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "columns contact-details"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Contact Details"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  className: "address"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Faith Community Foursquare Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Sunday Morning Service 10am"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), " 5519 Avalon Blvd."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), " Los Angeles, CA 90011 US"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Wednesday Night Bible Study via Zoom "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))))))));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
+
+/***/ }),
+
+/***/ "./src/components/Banner.js":
+/*!**********************************!*\
+  !*** ./src/components/Banner.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _SocialLinks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SocialLinks */ "./src/components/SocialLinks.js");
+
+
+
+const Banner = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row banner"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "banner-text"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
+  className: "responsive-headline"
+}, "Faith Community Foursquare Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "A Foursquare Gospel Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Rev. D.T. Paredes"), ",", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  className: "smoothscroll",
+  href: "#about"
+}, " "), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  className: "smoothscroll",
+  href: "#about"
+}, " ", "Senior Pastor")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SocialLinks__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Banner);
+
+/***/ }),
+
+/***/ "./src/components/Education.js":
+/*!*************************************!*\
+  !*** ./src/components/Education.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Education = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row education"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "three columns header-col"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Mission"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "nine columns main-col"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row item"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "twelve columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  className: "info"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Our Mission is to Build a Community of Faith that is motivated by Love, that is Evangelistic in Zeal that Operates in the Principles and Teachings of the Holy Bible; where people find and live out their Divine Purpose and Fulfill the Great Commission."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "\u2022"))))));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Education);
+
+/***/ }),
+
+/***/ "./src/components/Footer.js":
+/*!**********************************!*\
+  !*** ./src/components/Footer.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _SocialLinks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SocialLinks */ "./src/components/SocialLinks.js");
+
+
+
+const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("footer", {
+  id: "footer"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "twelve columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SocialLinks__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+  className: "copyright"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "\xA9 Faith Community Foursquare Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Developed in React \u269B\uFE0F by", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  href: "http://www.74thstreet.net"
+}, "Aaron Harris"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  id: "go-top"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  className: "smoothscroll",
+  title: "Back to Top",
+  href: "#home"
+}))));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ }),
+
+/***/ "./src/components/Header.js":
+/*!**********************************!*\
+  !*** ./src/components/Header.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Navigation */ "./src/components/Navigation.js");
+/* harmony import */ var _Banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Banner */ "./src/components/Banner.js");
+/* harmony import */ var _ScrollDown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ScrollDown */ "./src/components/ScrollDown.js");
+
+
+
+
+
+const Header = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", {
+  id: "home"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Navigation__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Banner__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ScrollDown__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ }),
+
+/***/ "./src/components/Navigation.js":
+/*!**************************************!*\
+  !*** ./src/components/Navigation.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const isCurrent = (anchor, pathname) => pathname.endsWith(anchor) ? 'current' : '';
+
+class Navigation extends (react__WEBPACK_IMPORTED_MODULE_0___default().Component) {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      pathname: '#home'
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('hashchange', () => {
+      this.setState({
+        pathname: window.location.href
+      });
+    });
+  }
+
+  render() {
+    const {
+      pathname = ''
+    } = this.state;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
+      id: "nav-wrap"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "mobile-btn",
+      href: "#nav-wrap"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+      id: "nav",
+      className: "nav"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: isCurrent('#home', pathname)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "smoothscroll",
+      href: "#home"
+    }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: isCurrent('#about', pathname)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "smoothscroll",
+      href: "#about"
+    }, "Pastor")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: isCurrent('#resume', pathname)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "smoothscroll",
+      href: "#resume"
+    }, "Mission")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: isCurrent('#skills', pathname)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "smoothscroll",
+      href: "#skills"
+    }, "Ministry")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: isCurrent('#testimonials', pathname)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "smoothscroll",
+      href: "#testimonials"
+    }, "Testimonials")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: isCurrent('#footer', pathname)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      className: "smoothscroll",
+      href: "#footer"
+    }, "Footer"))));
+  }
+
+}
+
+;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navigation);
+
+/***/ }),
+
+/***/ "./src/components/Resume.js":
+/*!**********************************!*\
+  !*** ./src/components/Resume.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Education__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Education */ "./src/components/Education.js");
+/* harmony import */ var _Work__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Work */ "./src/components/Work.js");
+
+
+ // import Skills from "./Skills";
+
+const Resume = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  id: "resume"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Education__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Work__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Resume);
+
+/***/ }),
+
+/***/ "./src/components/ScrollDown.js":
+/*!**************************************!*\
+  !*** ./src/components/ScrollDown.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const ScrollDown = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  className: "scrolldown"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  className: "smoothscroll",
+  href: "#about"
+}));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollDown);
+
+/***/ }),
+
+/***/ "./src/components/Skills.js":
+/*!**********************************!*\
+  !*** ./src/components/Skills.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_images_ancient_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/images/ancient.png */ "./src/assets/images/ancient.png");
+/* harmony import */ var _assets_images_pastoranddoctor_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/pastoranddoctor.jpg */ "./src/assets/images/pastoranddoctor.jpg");
+/* harmony import */ var _assets_images_youngmen_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/images/youngmen.jpg */ "./src/assets/images/youngmen.jpg");
+/* harmony import */ var _assets_images_deacons_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/images/deacons.jpg */ "./src/assets/images/deacons.jpg");
+
+
+
+
+
+
+const Skills = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row skill"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Ministry")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "three columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_pastoranddoctor_jpg__WEBPACK_IMPORTED_MODULE_2__["default"],
+  alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_deacons_jpg__WEBPACK_IMPORTED_MODULE_4__["default"],
+  alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_ancient_png__WEBPACK_IMPORTED_MODULE_1__["default"],
+  alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_youngmen_jpg__WEBPACK_IMPORTED_MODULE_3__["default"],
+  alt: ""
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "nine columns main-col"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "bars"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, "-IN DEPTH STUDY OF GOD'S WORD -MUSIC -FOOD FELLOWSHIP -COMMUNITY OUTREACH AND EDUCATION -DRAMA: 'The Faith Community Players' -COUNSELING and MORE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "One of Our Strengths is Our Willingness to \"Submit to One Another in Love\" Ephesians 5:21"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Rev. D.T. Paredes and Dr. Mardra J. Paredes are 'A Brother and Sister Ministry Team' that Serve as Senior Pastor and Assistant Pastor; Respectively."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Why attend the Faith Community Foursquare Church?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Skills);
+
+/***/ }),
+
+/***/ "./src/components/SocialLinks.js":
+/*!***************************************!*\
+  !*** ./src/components/SocialLinks.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const SocialLinks = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+  className: "social"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+  href: "https://www.linkedin.com/in/candace-collins-83030b71/"
+})));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SocialLinks);
+
+/***/ }),
+
+/***/ "./src/components/Testimonials.js":
+/*!****************************************!*\
+  !*** ./src/components/Testimonials.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-slick */ "./node_modules/react-slick/lib/index.js");
+
+
+const settings = {
+  // dots: true,
+  infinite: true,
+  autoplay: true,
+  speed: 500,
+  slideToShow: 1,
+  slideToScroll: 1,
+  swipeToSlide: true
+};
+
+const Testimonials = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  id: "testimonials"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "text-container"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "two columns header-col"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "ten columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Testimonials"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("blockquote", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "We celebrate with you, Pastor Terry Paredes your family is Godly Proud of you and all of your work in the ministry over these last 54 years.  To God be the glory for the things he has done through your life thus far, BUT THE BEST IS YET TO COME!!!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("cite", null, "Marcus, Teddi, Randi and Jeanine"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("blockquote", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Sincere congratulations to Pastor D.T. Paredes on 30 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("cite", null, "Betty Dixon, Pico Pre-School "))))))));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Testimonials);
+
+/***/ }),
+
+/***/ "./src/components/Work.js":
+/*!********************************!*\
+  !*** ./src/components/Work.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Work = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row work"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "three columns header-col"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Core Values"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "nine columns main-col"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row item"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "twelve columns"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+  className: "info"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "\u2022")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "The Word of God"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "The Love of God"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "The Move of the Holy Spirit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Spiritual Maturity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Unity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Loyalty"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Fruitfulness"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Excellence"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Teachableness"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Hospitality / Courtesy")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  className: "row item"
+})));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Work);
+
+/***/ }),
+
+/***/ "./src/pages/index.js":
+/*!****************************!*\
+  !*** ./src/pages/index.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gatsby_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby-link */ "./node_modules/gatsby-link/index.js");
+/* harmony import */ var _assets_css_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/css/main.css */ "./src/assets/css/main.css");
+/* harmony import */ var _assets_css_main_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_css_main_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./src/components/Header.js");
+/* harmony import */ var _components_About__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/About */ "./src/components/About.js");
+/* harmony import */ var _components_Resume__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Resume */ "./src/components/Resume.js");
+/* harmony import */ var _components_Skills__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Skills */ "./src/components/Skills.js");
+/* harmony import */ var _components_Testimonials__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Testimonials */ "./src/components/Testimonials.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Footer */ "./src/components/Footer.js");
+
+
+
+
+
+
+
+
+
+
+const IndexPage = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_About__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Resume__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Skills__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Testimonials__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexPage);
+
+/***/ }),
+
+/***/ "./node_modules/@gatsbyjs/reach-router/es/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@gatsbyjs/reach-router/es/index.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Link": () => (/* binding */ Link),
+/* harmony export */   "Location": () => (/* binding */ Location),
+/* harmony export */   "LocationProvider": () => (/* binding */ LocationProvider),
+/* harmony export */   "Match": () => (/* binding */ Match),
+/* harmony export */   "Redirect": () => (/* binding */ Redirect),
+/* harmony export */   "Router": () => (/* binding */ Router),
+/* harmony export */   "ServerLocation": () => (/* binding */ ServerLocation),
+/* harmony export */   "createHistory": () => (/* reexport safe */ _lib_history__WEBPACK_IMPORTED_MODULE_4__.createHistory),
+/* harmony export */   "createMemorySource": () => (/* reexport safe */ _lib_history__WEBPACK_IMPORTED_MODULE_4__.createMemorySource),
+/* harmony export */   "isRedirect": () => (/* binding */ isRedirect),
+/* harmony export */   "navigate": () => (/* reexport safe */ _lib_history__WEBPACK_IMPORTED_MODULE_4__.navigate),
+/* harmony export */   "redirectTo": () => (/* binding */ redirectTo),
+/* harmony export */   "globalHistory": () => (/* reexport safe */ _lib_history__WEBPACK_IMPORTED_MODULE_4__.globalHistory),
+/* harmony export */   "matchPath": () => (/* reexport safe */ _lib_utils__WEBPACK_IMPORTED_MODULE_3__.match),
+/* harmony export */   "useLocation": () => (/* binding */ useLocation),
+/* harmony export */   "useNavigate": () => (/* binding */ useNavigate),
+/* harmony export */   "useParams": () => (/* binding */ useParams),
+/* harmony export */   "useMatch": () => (/* binding */ useMatch),
+/* harmony export */   "BaseContext": () => (/* binding */ BaseContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/invariant.js");
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_lifecycles_compat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-lifecycles-compat */ "./.cache/react-lifecycles-compat.js");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/utils */ "./node_modules/@gatsbyjs/reach-router/es/lib/utils.js");
+/* harmony import */ var _lib_history__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/history */ "./node_modules/@gatsbyjs/reach-router/es/lib/history.js");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/* eslint-disable jsx-a11y/anchor-has-content */
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+var createNamedContext = function createNamedContext(name, defaultValue) {
+  var Ctx = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(defaultValue);
+  Ctx.displayName = name;
+  return Ctx;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Location Context/Provider
+var LocationContext = createNamedContext("Location");
+
+// sets up a listener if there isn't one already so apps don't need to be
+// wrapped in some top level provider
+var Location = function Location(_ref) {
+  var children = _ref.children;
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    LocationContext.Consumer,
+    null,
+    function (context) {
+      return context ? children(context) : react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        LocationProvider,
+        null,
+        children
+      );
+    }
+  );
+};
+
+var LocationProvider = function (_React$Component) {
+  _inherits(LocationProvider, _React$Component);
+
+  function LocationProvider() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, LocationProvider);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
+      context: _this.getContext(),
+      refs: { unlisten: null }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  LocationProvider.prototype.getContext = function getContext() {
+    var _props$history = this.props.history,
+        navigate = _props$history.navigate,
+        location = _props$history.location;
+
+    return { navigate: navigate, location: location };
+  };
+
+  LocationProvider.prototype.componentDidCatch = function componentDidCatch(error, info) {
+    if (isRedirect(error)) {
+      var _navigate = this.props.history.navigate;
+
+      _navigate(error.uri, { replace: true });
+    } else {
+      throw error;
+    }
+  };
+
+  LocationProvider.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+    if (prevState.context.location !== this.state.context.location) {
+      this.props.history._onTransitionComplete();
+    }
+  };
+
+  LocationProvider.prototype.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    var refs = this.state.refs,
+        history = this.props.history;
+
+    history._onTransitionComplete();
+    refs.unlisten = history.listen(function () {
+      Promise.resolve().then(function () {
+        // TODO: replace rAF with react deferred update API when it's ready https://github.com/facebook/react/issues/13306
+        requestAnimationFrame(function () {
+          if (!_this2.unmounted) {
+            _this2.setState(function () {
+              return { context: _this2.getContext() };
+            });
+          }
+        });
+      });
+    });
+  };
+
+  LocationProvider.prototype.componentWillUnmount = function componentWillUnmount() {
+    var refs = this.state.refs;
+
+    this.unmounted = true;
+    refs.unlisten();
+  };
+
+  LocationProvider.prototype.render = function render() {
+    var context = this.state.context,
+        children = this.props.children;
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+      LocationContext.Provider,
+      { value: context },
+      typeof children === "function" ? children(context) : children || null
+    );
+  };
+
+  return LocationProvider;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+LocationProvider.defaultProps = {
+  history: _lib_history__WEBPACK_IMPORTED_MODULE_4__.globalHistory
+};
+ true ? LocationProvider.propTypes = {
+  history: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().object.isRequired)
+} : 0;
+var ServerLocation = function ServerLocation(_ref2) {
+  var url = _ref2.url,
+      children = _ref2.children;
+
+  var searchIndex = url.indexOf("?");
+  var searchExists = searchIndex > -1;
+  var pathname = void 0;
+  var search = "";
+  var hash = "";
+
+  if (searchExists) {
+    pathname = url.substring(0, searchIndex);
+    search = url.substring(searchIndex);
+  } else {
+    pathname = url;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    LocationContext.Provider,
+    {
+      value: {
+        location: {
+          pathname: pathname,
+          search: search,
+          hash: hash
+        },
+        navigate: function navigate() {
+          throw new Error("You can't call navigate on the server.");
+        }
+      }
+    },
+    children
+  );
+};
+////////////////////////////////////////////////////////////////////////////////
+// Sets baseuri and basepath for nested routers and links
+var BaseContext = createNamedContext("Base", {
+  baseuri: "/",
+  basepath: "/",
+  navigate: _lib_history__WEBPACK_IMPORTED_MODULE_4__.globalHistory.navigate
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// The main event, welcome to the show everybody.
+var Router = function Router(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    BaseContext.Consumer,
+    null,
+    function (baseContext) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        Location,
+        null,
+        function (locationContext) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(RouterImpl, _extends({}, baseContext, locationContext, props));
+        }
+      );
+    }
+  );
+};
+
+var RouterImpl = function (_React$PureComponent) {
+  _inherits(RouterImpl, _React$PureComponent);
+
+  function RouterImpl() {
+    _classCallCheck(this, RouterImpl);
+
+    return _possibleConstructorReturn(this, _React$PureComponent.apply(this, arguments));
+  }
+
+  RouterImpl.prototype.render = function render() {
+    var _props = this.props,
+        location = _props.location,
+        _navigate2 = _props.navigate,
+        basepath = _props.basepath,
+        primary = _props.primary,
+        children = _props.children,
+        baseuri = _props.baseuri,
+        _props$component = _props.component,
+        component = _props$component === undefined ? "div" : _props$component,
+        domProps = _objectWithoutProperties(_props, ["location", "navigate", "basepath", "primary", "children", "baseuri", "component"]);
+
+    var routes = react__WEBPACK_IMPORTED_MODULE_0___default().Children.toArray(children).reduce(function (array, child) {
+      var routes = createRoute(basepath)(child);
+      return array.concat(routes);
+    }, []);
+    var pathname = location.pathname;
+
+
+    var match = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.pick)(routes, pathname);
+
+    if (match) {
+      var params = match.params,
+          uri = match.uri,
+          route = match.route,
+          element = match.route.value;
+
+      // remove the /* from the end for child routes relative paths
+
+      basepath = route.default ? basepath : route.path.replace(/\*$/, "");
+
+      var props = _extends({}, params, {
+        uri: uri,
+        location: location,
+        navigate: function navigate(to, options) {
+          return _navigate2((0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.resolve)(to, uri), options);
+        }
+      });
+
+      var clone = react__WEBPACK_IMPORTED_MODULE_0___default().cloneElement(element, props, element.props.children ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        Router,
+        { location: location, primary: primary },
+        element.props.children
+      ) : undefined);
+
+      // using 'div' for < 16.3 support
+      var FocusWrapper = primary ? FocusHandler : component;
+      // don't pass any props to 'div'
+      var wrapperProps = primary ? _extends({ uri: uri, location: location, component: component }, domProps) : domProps;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        BaseContext.Provider,
+        {
+          value: { baseuri: uri, basepath: basepath, navigate: props.navigate }
+        },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+          FocusWrapper,
+          wrapperProps,
+          clone
+        )
+      );
+    } else {
+      // Not sure if we want this, would require index routes at every level
+      // warning(
+      //   false,
+      //   `<Router basepath="${basepath}">\n\nNothing matched:\n\t${
+      //     location.pathname
+      //   }\n\nPaths checked: \n\t${routes
+      //     .map(route => route.path)
+      //     .join(
+      //       "\n\t"
+      //     )}\n\nTo get rid of this warning, add a default NotFound component as child of Router:
+      //   \n\tlet NotFound = () => <div>Not Found!</div>
+      //   \n\t<Router>\n\t  <NotFound default/>\n\t  {/* ... */}\n\t</Router>`
+      // );
+      return null;
+    }
+  };
+
+  return RouterImpl;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().PureComponent));
+
+RouterImpl.defaultProps = {
+  primary: true
+};
+
+
+var FocusContext = createNamedContext("Focus");
+
+var FocusHandler = function FocusHandler(_ref3) {
+  var uri = _ref3.uri,
+      location = _ref3.location,
+      component = _ref3.component,
+      domProps = _objectWithoutProperties(_ref3, ["uri", "location", "component"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    FocusContext.Consumer,
+    null,
+    function (requestFocus) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(FocusHandlerImpl, _extends({}, domProps, {
+        component: component,
+        requestFocus: requestFocus,
+        uri: uri,
+        location: location
+      }));
+    }
+  );
+};
+
+// don't focus on initial render
+var initialRender = true;
+var focusHandlerCount = 0;
+
+var FocusHandlerImpl = function (_React$Component2) {
+  _inherits(FocusHandlerImpl, _React$Component2);
+
+  function FocusHandlerImpl() {
+    var _temp2, _this4, _ret2;
+
+    _classCallCheck(this, FocusHandlerImpl);
+
+    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    return _ret2 = (_temp2 = (_this4 = _possibleConstructorReturn(this, _React$Component2.call.apply(_React$Component2, [this].concat(args))), _this4), _this4.state = {}, _this4.requestFocus = function (node) {
+      if (!_this4.state.shouldFocus && node) {
+        node.focus();
+      }
+    }, _temp2), _possibleConstructorReturn(_this4, _ret2);
+  }
+
+  FocusHandlerImpl.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+    var initial = prevState.uri == null;
+    if (initial) {
+      return _extends({
+        shouldFocus: true
+      }, nextProps);
+    } else {
+      var myURIChanged = nextProps.uri !== prevState.uri;
+      var navigatedUpToMe = prevState.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === nextProps.uri;
+      return _extends({
+        shouldFocus: myURIChanged || navigatedUpToMe
+      }, nextProps);
+    }
+  };
+
+  FocusHandlerImpl.prototype.componentDidMount = function componentDidMount() {
+    focusHandlerCount++;
+    this.focus();
+  };
+
+  FocusHandlerImpl.prototype.componentWillUnmount = function componentWillUnmount() {
+    focusHandlerCount--;
+    if (focusHandlerCount === 0) {
+      initialRender = true;
+    }
+  };
+
+  FocusHandlerImpl.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+    if (prevProps.location !== this.props.location && this.state.shouldFocus) {
+      this.focus();
+    }
+  };
+
+  FocusHandlerImpl.prototype.focus = function focus() {
+    if (false) {}
+
+    var requestFocus = this.props.requestFocus;
+
+
+    if (requestFocus) {
+      requestFocus(this.node);
+    } else {
+      if (initialRender) {
+        initialRender = false;
+      } else if (this.node) {
+        // React polyfills [autofocus] and it fires earlier than cDM,
+        // so we were stealing focus away, this line prevents that.
+        if (!this.node.contains(document.activeElement)) {
+          this.node.focus();
+        }
+      }
+    }
+  };
+
+  FocusHandlerImpl.prototype.render = function render() {
+    var _this5 = this;
+
+    var _props2 = this.props,
+        children = _props2.children,
+        style = _props2.style,
+        requestFocus = _props2.requestFocus,
+        _props2$component = _props2.component,
+        Comp = _props2$component === undefined ? "div" : _props2$component,
+        uri = _props2.uri,
+        location = _props2.location,
+        domProps = _objectWithoutProperties(_props2, ["children", "style", "requestFocus", "component", "uri", "location"]);
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+      Comp,
+      _extends({
+        style: _extends({ outline: "none" }, style),
+        tabIndex: "-1",
+        ref: function ref(n) {
+          return _this5.node = n;
+        }
+      }, domProps),
+      react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        FocusContext.Provider,
+        { value: this.requestFocus },
+        this.props.children
+      )
+    );
+  };
+
+  return FocusHandlerImpl;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
+
+(0,react_lifecycles_compat__WEBPACK_IMPORTED_MODULE_2__.polyfill)(FocusHandlerImpl);
+
+var k = function k() {};
+
+////////////////////////////////////////////////////////////////////////////////
+var forwardRef = (react__WEBPACK_IMPORTED_MODULE_0___default().forwardRef);
+
+if (typeof forwardRef === "undefined") {
+  forwardRef = function forwardRef(C) {
+    return C;
+  };
+}
+
+var Link = forwardRef(function (_ref4, ref) {
+  var innerRef = _ref4.innerRef,
+      props = _objectWithoutProperties(_ref4, ["innerRef"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    BaseContext.Consumer,
+    null,
+    function (_ref5) {
+      var basepath = _ref5.basepath,
+          baseuri = _ref5.baseuri;
+      return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        Location,
+        null,
+        function (_ref6) {
+          var location = _ref6.location,
+              navigate = _ref6.navigate;
+
+          var to = props.to,
+              state = props.state,
+              replace = props.replace,
+              _props$getProps = props.getProps,
+              getProps = _props$getProps === undefined ? k : _props$getProps,
+              anchorProps = _objectWithoutProperties(props, ["to", "state", "replace", "getProps"]);
+
+          var href = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.resolve)(to, baseuri);
+          var encodedHref = encodeURI(href);
+          var isCurrent = location.pathname === encodedHref;
+          var isPartiallyCurrent = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.startsWith)(location.pathname, encodedHref);
+
+          return react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", _extends({
+            ref: ref || innerRef,
+            "aria-current": isCurrent ? "page" : undefined
+          }, anchorProps, getProps({ isCurrent: isCurrent, isPartiallyCurrent: isPartiallyCurrent, href: href, location: location }), {
+            href: href,
+            onClick: function onClick(event) {
+              if (anchorProps.onClick) anchorProps.onClick(event);
+              if (shouldNavigate(event)) {
+                event.preventDefault();
+                var shouldReplace = replace;
+                if (typeof replace !== "boolean" && isCurrent) {
+                  var _location$state = _extends({}, location.state),
+                      key = _location$state.key,
+                      restState = _objectWithoutProperties(_location$state, ["key"]);
+
+                  shouldReplace = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.shallowCompare)(_extends({}, state), restState);
+                }
+                navigate(href, {
+                  state: state,
+                  replace: shouldReplace
+                });
+              }
+            }
+          }));
+        }
+      );
+    }
+  );
+});
+
+Link.displayName = "Link";
+
+ true ? Link.propTypes = {
+  to: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string.isRequired)
+} : 0;
+
+////////////////////////////////////////////////////////////////////////////////
+function RedirectRequest(uri) {
+  this.uri = uri;
+}
+
+var isRedirect = function isRedirect(o) {
+  return o instanceof RedirectRequest;
+};
+
+var redirectTo = function redirectTo(to) {
+  throw new RedirectRequest(to);
+};
+
+var RedirectImpl = function (_React$Component3) {
+  _inherits(RedirectImpl, _React$Component3);
+
+  function RedirectImpl() {
+    _classCallCheck(this, RedirectImpl);
+
+    return _possibleConstructorReturn(this, _React$Component3.apply(this, arguments));
+  }
+
+  // Support React < 16 with this hook
+  RedirectImpl.prototype.componentDidMount = function componentDidMount() {
+    var _props3 = this.props,
+        navigate = _props3.navigate,
+        to = _props3.to,
+        from = _props3.from,
+        _props3$replace = _props3.replace,
+        replace = _props3$replace === undefined ? true : _props3$replace,
+        state = _props3.state,
+        noThrow = _props3.noThrow,
+        baseuri = _props3.baseuri,
+        props = _objectWithoutProperties(_props3, ["navigate", "to", "from", "replace", "state", "noThrow", "baseuri"]);
+
+    Promise.resolve().then(function () {
+      var resolvedTo = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.resolve)(to, baseuri);
+      navigate((0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.insertParams)(resolvedTo, props), { replace: replace, state: state });
+    });
+  };
+
+  RedirectImpl.prototype.render = function render() {
+    var _props4 = this.props,
+        navigate = _props4.navigate,
+        to = _props4.to,
+        from = _props4.from,
+        replace = _props4.replace,
+        state = _props4.state,
+        noThrow = _props4.noThrow,
+        baseuri = _props4.baseuri,
+        props = _objectWithoutProperties(_props4, ["navigate", "to", "from", "replace", "state", "noThrow", "baseuri"]);
+
+    var resolvedTo = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.resolve)(to, baseuri);
+    if (!noThrow) redirectTo((0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.insertParams)(resolvedTo, props));
+    return null;
+  };
+
+  return RedirectImpl;
+}((react__WEBPACK_IMPORTED_MODULE_0___default().Component));
+
+var Redirect = function Redirect(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    BaseContext.Consumer,
+    null,
+    function (_ref7) {
+      var baseuri = _ref7.baseuri;
+      return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        Location,
+        null,
+        function (locationContext) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(RedirectImpl, _extends({}, locationContext, { baseuri: baseuri }, props));
+        }
+      );
+    }
+  );
+};
+
+ true ? Redirect.propTypes = {
+  from: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string),
+  to: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string.isRequired)
+} : 0;
+
+////////////////////////////////////////////////////////////////////////////////
+var Match = function Match(_ref8) {
+  var path = _ref8.path,
+      children = _ref8.children;
+  return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+    BaseContext.Consumer,
+    null,
+    function (_ref9) {
+      var baseuri = _ref9.baseuri;
+      return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(
+        Location,
+        null,
+        function (_ref10) {
+          var navigate = _ref10.navigate,
+              location = _ref10.location;
+
+          var resolvedPath = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.resolve)(path, baseuri);
+          var result = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.match)(resolvedPath, location.pathname);
+          return children({
+            navigate: navigate,
+            location: location,
+            match: result ? _extends({}, result.params, {
+              uri: result.uri,
+              path: path
+            }) : null
+          });
+        }
+      );
+    }
+  );
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Hooks
+
+var useLocation = function useLocation() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(LocationContext);
+
+  if (!context) {
+    throw new Error("useLocation hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router");
+  }
+
+  return context.location;
+};
+
+var useNavigate = function useNavigate() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(BaseContext);
+
+  if (!context) {
+    throw new Error("useNavigate hook was used but a BaseContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router");
+  }
+
+  return context.navigate;
+};
+
+var useParams = function useParams() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(BaseContext);
+
+  if (!context) {
+    throw new Error("useParams hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router");
+  }
+
+  var location = useLocation();
+
+  var results = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.match)(context.basepath, location.pathname);
+
+  return results ? results.params : null;
+};
+
+var useMatch = function useMatch(path) {
+  if (!path) {
+    throw new Error("useMatch(path: string) requires an argument of a string to match against");
+  }
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(BaseContext);
+
+  if (!context) {
+    throw new Error("useMatch hook was used but a LocationContext.Provider was not found in the parent tree. Make sure this is used in a component that is a child of Router");
+  }
+
+  var location = useLocation();
+
+  var resolvedPath = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.resolve)(path, context.baseuri);
+  var result = (0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.match)(resolvedPath, location.pathname);
+  return result ? _extends({}, result.params, {
+    uri: result.uri,
+    path: path
+  }) : null;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Junk
+var stripSlashes = function stripSlashes(str) {
+  return str.replace(/(^\/+|\/+$)/g, "");
+};
+
+var createRoute = function createRoute(basepath) {
+  return function (element) {
+    if (!element) {
+      return null;
+    }
+
+    if (element.type === (react__WEBPACK_IMPORTED_MODULE_0___default().Fragment) && element.props.children) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default().Children.map(element.props.children, createRoute(basepath));
+    }
+    !(element.props.path || element.props.default || element.type === Redirect) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "<Router>: Children of <Router> must have a `path` or `default` prop, or be a `<Redirect>`. None found on element type `" + element.type + "`") : 0 : void 0;
+
+    !!(element.type === Redirect && (!element.props.from || !element.props.to)) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "<Redirect from=\"" + element.props.from + "\" to=\"" + element.props.to + "\"/> requires both \"from\" and \"to\" props when inside a <Router>.") : 0 : void 0;
+
+    !!(element.type === Redirect && !(0,_lib_utils__WEBPACK_IMPORTED_MODULE_3__.validateRedirect)(element.props.from, element.props.to)) ?  true ? invariant__WEBPACK_IMPORTED_MODULE_1___default()(false, "<Redirect from=\"" + element.props.from + " to=\"" + element.props.to + "\"/> has mismatched dynamic segments, ensure both paths have the exact same dynamic segments.") : 0 : void 0;
+
+    if (element.props.default) {
+      return { value: element, default: true };
+    }
+
+    var elementPath = element.type === Redirect ? element.props.from : element.props.path;
+
+    var path = elementPath === "/" ? basepath : stripSlashes(basepath) + "/" + stripSlashes(elementPath);
+
+    return {
+      value: element,
+      default: element.props.default,
+      path: element.props.children ? stripSlashes(path) + "/*" : path
+    };
+  };
+};
+
+var shouldNavigate = function shouldNavigate(event) {
+  return !event.defaultPrevented && event.button === 0 && !(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+};
+
+////////////////////////////////////////////////////////////////////////
+
+
+/***/ }),
+
+/***/ "./node_modules/invariant/invariant.js":
+/*!*********************************************!*\
+  !*** ./node_modules/invariant/invariant.js ***!
+  \*********************************************/
+/***/ ((module) => {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var NODE_ENV = "development";
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+
+/***/ }),
+
+/***/ "./node_modules/json2mq/index.js":
+/*!***************************************!*\
+  !*** ./node_modules/json2mq/index.js ***!
+  \***************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var camel2hyphen = __webpack_require__(1169);
+var camel2hyphen = __webpack_require__(/*! string-convert/camel2hyphen */ "./node_modules/string-convert/camel2hyphen.js");
 
 var isDimension = function (feature) {
   var re = /[height|width]$/;
@@ -518,7 +3112,10 @@ module.exports = json2mq;
 
 /***/ }),
 
-/***/ 1296:
+/***/ "./node_modules/lodash.debounce/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash.debounce/index.js ***!
+  \***********************************************/
 /***/ ((module) => {
 
 /**
@@ -902,7 +3499,20 @@ module.exports = debounce;
 
 /***/ }),
 
-/***/ 8205:
+/***/ "./src/assets/css/main.css":
+/*!*********************************!*\
+  !*** ./src/assets/css/main.css ***!
+  \*********************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-slick/lib/arrows.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-slick/lib/arrows.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -913,11 +3523,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.NextArrow = exports.PrevArrow = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _classnames = _interopRequireDefault(__webpack_require__(4184));
+var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-var _innerSliderUtils = __webpack_require__(5518);
+var _innerSliderUtils = __webpack_require__(/*! ./utils/innerSliderUtils */ "./node_modules/react-slick/lib/utils/innerSliderUtils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -1091,7 +3701,10 @@ exports.NextArrow = NextArrow;
 
 /***/ }),
 
-/***/ 3492:
+/***/ "./node_modules/react-slick/lib/default-props.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-slick/lib/default-props.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1102,7 +3715,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -1171,7 +3784,10 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6329:
+/***/ "./node_modules/react-slick/lib/dots.js":
+/*!**********************************************!*\
+  !*** ./node_modules/react-slick/lib/dots.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1182,11 +3798,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.Dots = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _classnames = _interopRequireDefault(__webpack_require__(4184));
+var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-var _innerSliderUtils = __webpack_require__(5518);
+var _innerSliderUtils = __webpack_require__(/*! ./utils/innerSliderUtils */ "./node_modules/react-slick/lib/utils/innerSliderUtils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -1313,28 +3929,33 @@ exports.Dots = Dots;
 
 /***/ }),
 
-/***/ 6066:
+/***/ "./node_modules/react-slick/lib/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/react-slick/lib/index.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-var __webpack_unused_export__;
 
 
-__webpack_unused_export__ = ({
+Object.defineProperty(exports, "__esModule", ({
   value: true
-});
-__webpack_unused_export__ = void 0;
+}));
+exports["default"] = void 0;
 
-var _slider = _interopRequireDefault(__webpack_require__(5798));
+var _slider = _interopRequireDefault(__webpack_require__(/*! ./slider */ "./node_modules/react-slick/lib/slider.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = _slider["default"];
-__webpack_unused_export__ = _default;
+exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6948:
+/***/ "./node_modules/react-slick/lib/initial-state.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-slick/lib/initial-state.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1380,7 +4001,10 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6801:
+/***/ "./node_modules/react-slick/lib/inner-slider.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-slick/lib/inner-slider.js ***!
+  \******************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1391,23 +4015,23 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.InnerSlider = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _initialState = _interopRequireDefault(__webpack_require__(6948));
+var _initialState = _interopRequireDefault(__webpack_require__(/*! ./initial-state */ "./node_modules/react-slick/lib/initial-state.js"));
 
-var _lodash = _interopRequireDefault(__webpack_require__(1296));
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js"));
 
-var _classnames = _interopRequireDefault(__webpack_require__(4184));
+var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-var _innerSliderUtils = __webpack_require__(5518);
+var _innerSliderUtils = __webpack_require__(/*! ./utils/innerSliderUtils */ "./node_modules/react-slick/lib/utils/innerSliderUtils.js");
 
-var _track = __webpack_require__(4740);
+var _track = __webpack_require__(/*! ./track */ "./node_modules/react-slick/lib/track.js");
 
-var _dots = __webpack_require__(6329);
+var _dots = __webpack_require__(/*! ./dots */ "./node_modules/react-slick/lib/dots.js");
 
-var _arrows = __webpack_require__(8205);
+var _arrows = __webpack_require__(/*! ./arrows */ "./node_modules/react-slick/lib/arrows.js");
 
-var _resizeObserverPolyfill = _interopRequireDefault(__webpack_require__(1033));
+var _resizeObserverPolyfill = _interopRequireDefault(__webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -2261,7 +4885,10 @@ exports.InnerSlider = InnerSlider;
 
 /***/ }),
 
-/***/ 5798:
+/***/ "./node_modules/react-slick/lib/slider.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-slick/lib/slider.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -2272,15 +4899,15 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _innerSlider = __webpack_require__(6801);
+var _innerSlider = __webpack_require__(/*! ./inner-slider */ "./node_modules/react-slick/lib/inner-slider.js");
 
-var _json2mq = _interopRequireDefault(__webpack_require__(973));
+var _json2mq = _interopRequireDefault(__webpack_require__(/*! json2mq */ "./node_modules/json2mq/index.js"));
 
-var _defaultProps = _interopRequireDefault(__webpack_require__(3492));
+var _defaultProps = _interopRequireDefault(__webpack_require__(/*! ./default-props */ "./node_modules/react-slick/lib/default-props.js"));
 
-var _innerSliderUtils = __webpack_require__(5518);
+var _innerSliderUtils = __webpack_require__(/*! ./utils/innerSliderUtils */ "./node_modules/react-slick/lib/utils/innerSliderUtils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -2314,7 +4941,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var enquire = (0, _innerSliderUtils.canUseDOM)() && __webpack_require__(4974);
+var enquire = (0, _innerSliderUtils.canUseDOM)() && __webpack_require__(/*! enquire.js */ "./node_modules/enquire.js/src/index.js");
 
 var Slider = /*#__PURE__*/function (_React$Component) {
   _inherits(Slider, _React$Component);
@@ -2451,16 +5078,22 @@ var Slider = /*#__PURE__*/function (_React$Component) {
 
 
       if (settings.centerMode) {
-        if (settings.slidesToScroll > 1 && "production" !== "production") {}
+        if (settings.slidesToScroll > 1 && "development" !== "production") {
+          console.warn("slidesToScroll should be equal to 1 in centerMode, you are using ".concat(settings.slidesToScroll));
+        }
 
         settings.slidesToScroll = 1;
       } // force showing one slide and scrolling by one if the fade mode is on
 
 
       if (settings.fade) {
-        if (settings.slidesToShow > 1 && "production" !== "production") {}
+        if (settings.slidesToShow > 1 && "development" !== "production") {
+          console.warn("slidesToShow should be equal to 1 when fade is true, you're using ".concat(settings.slidesToShow));
+        }
 
-        if (settings.slidesToScroll > 1 && "production" !== "production") {}
+        if (settings.slidesToScroll > 1 && "development" !== "production") {
+          console.warn("slidesToScroll should be equal to 1 when fade is true, you're using ".concat(settings.slidesToScroll));
+        }
 
         settings.slidesToShow = 1;
         settings.slidesToScroll = 1;
@@ -2551,7 +5184,10 @@ exports["default"] = Slider;
 
 /***/ }),
 
-/***/ 4740:
+/***/ "./node_modules/react-slick/lib/track.js":
+/*!***********************************************!*\
+  !*** ./node_modules/react-slick/lib/track.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -2562,11 +5198,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.Track = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
-var _classnames = _interopRequireDefault(__webpack_require__(4184));
+var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 
-var _innerSliderUtils = __webpack_require__(5518);
+var _innerSliderUtils = __webpack_require__(/*! ./utils/innerSliderUtils */ "./node_modules/react-slick/lib/utils/innerSliderUtils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -2846,7 +5482,10 @@ exports.Track = Track;
 
 /***/ }),
 
-/***/ 5518:
+/***/ "./node_modules/react-slick/lib/utils/innerSliderUtils.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-slick/lib/utils/innerSliderUtils.js ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -2858,7 +5497,7 @@ Object.defineProperty(exports, "__esModule", ({
 exports.clamp = clamp;
 exports.canUseDOM = exports.slidesOnLeft = exports.slidesOnRight = exports.siblingDirection = exports.getTotalSlides = exports.getPostClones = exports.getPreClones = exports.getTrackLeft = exports.getTrackAnimateCSS = exports.getTrackCSS = exports.checkSpecKeys = exports.getSlideCount = exports.checkNavigable = exports.getNavigableIndexes = exports.swipeEnd = exports.swipeMove = exports.swipeStart = exports.keyHandler = exports.changeSlide = exports.slideHandler = exports.initializedState = exports.extractObject = exports.canGoNext = exports.getSwipeDirection = exports.getHeight = exports.getWidth = exports.lazySlidesOnRight = exports.lazySlidesOnLeft = exports.lazyEndIndex = exports.lazyStartIndex = exports.getRequiredLazySlides = exports.getOnDemandLazySlides = exports.safePreventDefault = void 0;
 
-var _react = _interopRequireDefault(__webpack_require__(7294));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -3806,7 +6445,10 @@ exports.canUseDOM = canUseDOM;
 
 /***/ }),
 
-/***/ 1033:
+/***/ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js ***!
+  \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4746,7 +7388,10 @@ var index = (function () {
 
 /***/ }),
 
-/***/ 1169:
+/***/ "./node_modules/string-convert/camel2hyphen.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/string-convert/camel2hyphen.js ***!
+  \*****************************************************/
 /***/ ((module) => {
 
 var camel2hyphen = function (str) {
@@ -4758,6 +7403,81 @@ var camel2hyphen = function (str) {
 };
 
 module.exports = camel2hyphen;
+
+/***/ }),
+
+/***/ "./src/assets/images/ancient.png":
+/*!***************************************!*\
+  !*** ./src/assets/images/ancient.png ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/ancient-182ced164503dbdd279f48f9ed7f2fa3.png");
+
+/***/ }),
+
+/***/ "./src/assets/images/deacons.jpg":
+/*!***************************************!*\
+  !*** ./src/assets/images/deacons.jpg ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/deacons-cda99ec458df030fb4641152ef11888a.jpg");
+
+/***/ }),
+
+/***/ "./src/assets/images/pastoranddoctor.jpg":
+/*!***********************************************!*\
+  !*** ./src/assets/images/pastoranddoctor.jpg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/pastoranddoctor-6985418eda6a134d72db0964fc489d00.jpg");
+
+/***/ }),
+
+/***/ "./src/assets/images/profilepic.jpg":
+/*!******************************************!*\
+  !*** ./src/assets/images/profilepic.jpg ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYYGRgaHBwaGhwcGhoaGh4cGhoaGhocGhgcIS4lHB4rIRocJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHzQrJCs0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAOkA2QMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAAEBQIDBgABBwj/xAA9EAACAQMCBAIJAgUDAgcAAAABAgADBBEhMQUSQVFhcQYTIoGRscHR8DKhFUJScuEWI7IHgjM0YqLC4vH/xAAZAQADAQEBAAAAAAAAAAAAAAAAAgMBBAX/xAAiEQACAgIDAAMAAwAAAAAAAAAAAQIRAyESMUETMlEiQmH/2gAMAwEAAhEDEQA/APjM6dOgB06dOgB0f+jttu58h5dfzwiATYcLp8tNR4ZPmdTJZpVErhVysYUFjGkkEtlh1Ocb2dqL6aS9E1kUhFMTUgZNElgWTRZNRGoyyrkkXSXdZ4+kKMsFdYI6QyoZTFYyA3SUukMdZW6zDQRkzIMkK5ZVVWAAlWBVYZWgVQzULICuRpEl8uke1omvhoZfG9nPkWhXOnTp0nMdOnToAdOnToAdOnToATpLkgdyB8TNxbLoJjLD/wARfObW1Ok58/h0YPQ22ENRYJbw2nOc6V0WoIShlKiXoIIJBCNLJQDLs6RxT3P5/mQqGcp/PzaeOIAC1DKsy9l1lTrFY0SLGUM0m7Yg5eKMWgSqqskGkXOYAAVxAKsY14trzULIEqtpFdfYw25aAVTpLwRCbsVGdOM6dJynTp06AHTp06AHTp06AFtucOp8R85trZtJhqe48xNlTbAkM3h0YfRnQeMaTCZxbo506fvDLbiA2JkHFnRGS6NChhKxVb3QPWGK+kXo1qwxpyvpBPXy0P1m2HEIpmXLTyDFzXGNpJr7lBOR4wsOITyAbwK5qDbIie94yx/STiADnc/zE9o3FsVyS0hxcXCjOogq3KnrKk4ef5z7pNrYDaY0kMm2XCpJq2YEdITTeIMdWEVXYxmN6u0U3cZCyE9eCVEJOBudPjDqiyNgB6zmOy/OWi6RztW6J3ViiIFKjmbT/OZnGGDiaYP6yoSdlwB7t4n4zamnVYdDqPIymOW6Fyx1aF86dOlSB06dOgB06dOgBJNx5ibDOgmNmuTVR5CRyroti9GVKipG0jU4R1QkeHSVpdquNyewGTDafECBqmPNlH1kFyXR0NRfYBTWomN8AxtbXed95Ub9WGqnHgQ37A5lem6kEd4S2bGl0M1fMIVtIrt3OYwpISNJMoQqPiAXdXmGAYXcIesWVmx95qMfR7b2nMRk6Rzb26qNPz4xCt0QM8wRehIyT5CDvxXlIVubLahnYovn7I20lFFsk5RRorhh3i6rVxtM8nFWduVUB36t88zxrhjtkeGSfnrB42CyrwaPXyYdbaxPaUHdh7J89Zo7a2KjBEVqhoyZXViq66xvciJrkzENIW3B0gaPuAcEmE3Jl/BbMOwB7HHnvLR0iFXInYUuRh2Onxg3pcPapnunyM0dzZAUmPUTMelVTLUx2QH46wxu5WNlVRaEE6dOnScZ06dOgB06dOgB6JsrReZR4gTGTZ+j7c1NfLHw0ks3VlsXdAt0GQ4UHJ/N4X/By9uzZPrN+XPTwjerahtcZltFGXbPvkFkov8AEn2ZO1srh+RRT5QhI51QKxyf5m3bEenhjo2V5mGdfZIJGmvY7x4lRz1xDKS4HfzhKd+BHHxE4syuM9dY44YgxB7pwfdpCbMYWSbLJFF+gzF91w0suV/Udu3nGNzvL7TaCezJRM1bcJ5KgZ2D42GNPcIy4zw+jchechSuxU647bR5Vt1bpBGsFlFJrpk+MXpoz9lwijSJ5AzEjHM3yEuPDkJyRkxubSSFHExybHUUlSBKFADoJY+0uZYNVaKMAXZ0iW4Mb3ZiisJqEkLqywjhTkMoXfJ+GMH5yFRZbwypyFjjXGko3omvsMrmuzD1Q3J1x0XqZmvSak3rOYj2SAFPT2dMecf+tKZO5bTP0jYcMWtRNNhuND1BGxEphXpPNLw+XzoXxCxei5Rxgj4EdCO4gkuc506dOgB06dOgB01Pou/skdm+gmZp0ySAASTsAMk+Qmr4JYVKSn1ilSxyAdyMY90nl+pTF9jU0DmWhJRbQpVnEd6RZTSXOJFTiU16umkzsKKqgy2IfTXAxArJMkHxjxKBOwmJWP0tie5BlVK45Yde0iIs5MtDoKscW9wDCOWJASh8Idb3YMZMRoN5O8rdJfTqDEhUxHZiAKwMX1TD7louuGk2agK5aLaoh1w8DeOhZAVRZVbqeaFuIL60IwYnA2PbWUWyQworzOi+P0M2VhTx8JnOCUVdw4IIG2NtZr7alj4SsFUTnytN6AONej1O4Qcy+0NmGhHvmV/0Gv8AXU+Cz6ZTTST9WO0pZM/OU6GWHDatYkU0Z8b42Ge5O02vAf8Ap8SQ1ww/sU/8m+g+MYDFcP4bVrNy00Ldz/KPNthNfY/9P20as+n9KD/5H7T6XYcHpogVFVVHQDEKt7cDIYZ1wJlgZjg3o5b0tUUBv6jq3xMB9KqfK9MeDfDIm4ezQnYqfD7TJ+nFAK1Jhr+oH/2kfWTyO4spidSQttm0hiGLLZ4UK04qPSTVF1SriUnUecFuahxA/wCKBBqZrTfQvJJ7HVlVxG9DiYUYmCfjtMtowln8YB6j4zVCSMc4v02N1ehvOQSkMc0xlXjqrqTk9BuZ3+qSN0f5Q4SfgfJFemovGAglpV3x3iJuPBxqCPOM+FOQvMRjmOcHfHSCi12Y5p9D2lcyx7qKnrdZAXEDQytW8YvrPPXqQWo0KsxypFTPKHMm7SGI6ROTK2i+/oFlVRuzAfM/SMykM4XZ89Rc9Mn6fWVj2Rm9Db0V4d6tADNdQpfKB2dtgbRtbpKkKLaFPSS9XLqSyzlgFHznhF4lshpvTwoyVZFGT4MO/jD04651SmpHi/0UfWGV7FXB2mav+HvSbmTIx1E5fllVWdrwxuzQJ6RVV1Nujf8Acw+hl/8AqvmwTbOpHQOGz7yBE3DeNq/sVQA23MNj5joY8o0EY4+U1Tl+mPDD8GHC+O0a7cgyj/0OACf7SCQ3z8IJ6W2PPROBqp5vdsfn+0zXGbRkfmXKspypG4I2M1HBOMLc0yGADqOWovnpzDwP3lIz5aZHJj4/yXR87VyNDL1qyXFbc06jod1JA8RuD8MGLy2JKUaZeE7QXWeJeJU1bQ6y26u8aQZfa7/nb86TYR9FnK9C8Wq9BGNlwpDnmGdO20vS289PoPvDLYaa5wc4Huz/AIlW2TUSiy4agYkLse0vuKKk+0Bppt2lofcjQDA/aSu1ZlzjXt306Rdj6RC2tUU55QOsZtUUCK3c98aZHb/8g1Wqc69D+aRGrGTobuw7yotE9S7x9JZS4jzdYcGg5pjQNKqhkKD5GZzGZQN6ImeBZLlnqiMK3R4qTRejNHUn3RFnALHpNf6NWxVBnc6nzMpFEpMfUqULpJIUhL+aUJpE1E9xPEOZf6uBp84PCm7Smvw11BIYj39PrNnUrp4RVfsGBxOKj0EYVyOY9+o7juI64NxUoQGOV6Ht/iKeJW5D5EstbJmQuNdTkdsfmYyFembXiCLUXMyXr3tqy1U2GjD+pTuPzqBDOFcT5cI502Un5GW8UoBgZl07BrlGi/0rtQ4p3CYKuOUkeXMh94z8JkrhcTaeiVQVbaraudUOV78raqR5MD+0yXEKDo5Rxgjf7iXltWjlT4vixRcpzAjrI2d6iIFY4Yaa9ffLrumSOYHzg7W4dT3hGq2DbUrQQnFVzoyn4Rpa8YQ6Mg2xkaYEW2fCkcAEAGX/AMBddF116/fpCl4WipNX2HrxOkmcITrnXuNAZTV4wraBQBsNOmMY3g7cDqHZce8kfKNbP0MqVBgjA76r+5MOJtS/BS/EBgZAGNoLW4kmPZHMfDX95oLv0coUP1crN2GuPfFZoLnOAAOkxqKMaddicWr1NW9kdFH17yTWhTEdUVECv31mqVknGtkrNyVELUwW2Ps4hCybWx10SWWosgglzMFEdIVk7ehzuiDYEM3u2Hx+U+g2VHlUCIPRfhxA52HtNr5dhNPtKIjLbLQ2JyEsdJQMscCOLG1wIWBO2t4Z6rxltNJdyTaMbPkr1n7yprxhuMjwmgurNQYlvqSqD5H4zjaPRUmBXKK68wgnC7n1dXkb9L6f93Q/SC2N2UdkJyDt5zuJpkZHnCNpmN6Lb5AHYDbt2kKd0y6MSR4xfZ1iSQx1zDLtfZDD3/eOKn6X2PEDb10qrkrqtQd0O/vBwfdNJx7h610DoRzYyrdGU64PhMQ50mp9FLrnolDvTbA/tbUfUe6Vxvw58y/sYy4VlJVs9iINaVeVuU7TcXNijs6OPEHqM74MyXFeHmn7S6jJB7jHWbxJ8gmjVx5jaObC/wAbmZehVDrjqJ7691OjfHWKzohko278QdgMHQHI28vrOfjFQAjP7/aYh+J1QNx8JSL+q+7GFSH+VdD+9usnLNn87QIVObyglKi53BjGjQxvFehW3I9Ggia5fU6+Ua3tUAYEQXFT4xoL0lkdaD7J9cRkhirhbjJjJXmyjvRkXoIGmsI4TaGvVx/IhBY9z0X6/CKTcNUcUaWrt16KOpM+l+j/AAdaNNVG+NT1J6k+M1KjJSGFrSCrIu+TgSd1UwMCWcPtsnJm34IGWFtjUiOaSSq3pYhiLGSMbJouJH1yyNV86D3yHLHFPmtbiIO5gF23MNJK/tgBkdPrt8jEtG65WKE6dJwNM9S1QFdUDzZlyVeZdd/rC7gAiAUiqs3ln7xltCPTBGXDwl6nsHykKlIkFhsJCo/sRqJ3VkKByn7R56FE+sqjoVU/An7xBbtpiaX0KH+5U/sX/kY8fsTyfUa3iYcN7j9Ik4ja8wcYycZA8xg/ITTXaZzFbLhwD1BH1lX2c66PnKsUfb3fOOrcq653lHpHYkOWA9kk49+c/KKLa8ZD4RJR5LRSE6dM0Jtk7CX0ERdlEVLxRcZ2nfxEeMlxkW5RHgqDwlNzcqBEjcSg9zfc3XMI43ewllVaLbuqSSYA7a6yLVsypQczpSo5pSsPta3LqdpXc8RZ/ZTrppuZ7b2DPgA8oO5/xNn6Kei686tyk4/mbv2A6THXYJvoa/8AT/0aNNfWOPbfU9cDoM/m83LkKPKe0kCKAOkX3dYu3IPfFbNI0ULvnpNJZ2/KBBuF2fKASI4RJsUY2eosk5wMdTJbSsDMYU8VZ2JM9vjIc6+EYD5PxJGwZm3Q5MZfxVqgOCCg0Hj4+UFuHnAj0vClLg8pU7jbyglI8z48Jei5bzGJXcn1as4GeUgnHbOvzlIrZJvVs0VCxApcp3KnPmRMqx9nEMT0p5lCqhz3Og+HWAqdI9fospJ9HlOaT0IP+7U/sH/ITOLNL6EL/uVD/wCgD4sI0VsnJ6NPWWLLungg9jHTpF93TypjMkhVxaxFVMfCfP8AiXDmQ40xrrmfUQmVEWXfDUbJIzmCYNHzIp+0rOenearivCAjAgaMT+CK7jhrIOfGV6+HbP3jKSMpigUzJhJei5hAt4WFAapC7ahnAxJLbGaD0f4M9RtBoNydhAKGHAOE85CgeZn0rh9otNAomXyaC/7S7Eandj3PhNHY36unOdCP1DsftFsajr+4xoNzLeEWOdTBbWkaj8x67TU21AKoAmJWzGy2kkvUTxVnrnAjilbnJ8p3N23kUE8rPyjTc7ecAOOp5R75d6lZGhT5R4neTzNSNs/K3CL91IUHI8envmlR2IycfOI7aw0z1hD8QZBhlJ8pzzSb0dcXxVMY0nw498JuVBpVCf6cfGZNuIVObmAA0A5d4ZSvqtTRiAvYd/HvG4tGck1RbQpYhMrWTLTLsVqjzE1/oNT0qN35B8Mn6zICbv0NTFDm/qcn4AD6R49k59D90g9WnmHhZBkjtE06E9FPZkHpw5EAznTXrKLjONB7z9og1ma9IVHKq9S2g8OsotqZ5cEZHaNH4fzHnbJY9/pC6VmANplAYviPBQrh1HsMdfA/aX0+DTWVrT2SCND+0s4fw/n36bjufz5zQEXDeABm1/SNz0mhSoiYVRhF7dT494S9k+2QF646z22tQ78g1C6mDfgUQp0mqHnbQdB9TCLW1ZsAbHfxjOrT5VwBvpL+FWhU+B1PgfCZxAN4da8ozGyLKaaQmUSoVs6VVDLDKzvAw6UUBzuW6LoPPr+eEsuHwpPhPbZORAPjA0uJlfrB2nb+UlmOYfnqigwNJF7dW3GZcu09JnE2eglYtubUDoJUiAQy4OYKRrGTdE5LZPE9AlgpnEkaULoKsqabv0Qqg26jqrMD8c/WYVlmo9Cqurp5MPkfpKQZKcTcoZby6GUUTCwNBKEBW1Ac5ONcDWV3FPT9oxqJ7Q8jKaie0vnmZRqA3oagdpatGErT6yZTsNYGqwV6I6yNvhCTtnaEm3Y7fHrOThhJy2TFf+BQC9V6hwug7x1w2yCJjqdSZbRtAuBiE1TyqTNS9CwQJzP4CNrelgQPh9LqfOMlmpBJllJZZPKYnZmikWMgu09c6TukAKK+rKvc6+Q1+0vY5g6H2yf6V/dj/wDWXZgaz3MlmQE85/GbZh+e1c6S0vpBk6S9dpyM9BFdZvjI0KXUyXUS4bDyE3wwsp08yVSnLKX6fztIP18jFADrKBCOD3vqaiudtm8j9t/dKX/P3lL/AJ8JSJOZ9ZtagYAg5BAIPQg7Rgm8zfop/wCXp+/5maGnLo5X2TdNvOUsntjyP0hLdJS36/cZjNOCQijR6yBhdLpFNJJTEmQAJA/qHkZOrtGRjPaSaEnrBr5tlHWHJsYvr/rH51g+gQyoJyqJapnhnq9JopeJHMl9pGAFbnWenaQbc/naSO0AKwMZ8Tn6fT95IGRbb3CeneBrPSeneT9WvaRH6vcfmJOaB//Z");
+
+/***/ }),
+
+/***/ "./src/assets/images/youngmen.jpg":
+/*!****************************************!*\
+  !*** ./src/assets/images/youngmen.jpg ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/youngmen-f8deeb30ad58d86a24796d6ddaade64e.jpg");
 
 /***/ })
 
