@@ -9,9 +9,8 @@ const Skills = () => (
     {/* <div className="three columns header-col"> */}
     <h1>
       <span>Ministry</span>
-      <div className="header .banner-text">
-        <img src={foursquareicons} alt="" />
-      </div>
+      <br></br>
+      <img src={foursquareicons} alt="" />
     </h1>
     <div className="three columns">
       <img src={pastoranddoctor} alt="" />
