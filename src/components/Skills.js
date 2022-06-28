@@ -24,6 +24,7 @@ const Skills = () => (
 
           <p>The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to...</p>
           <ul>
+            -IN DEPTH STUDY OF GOD'S WORD
             -MUSIC
             -FOOD FELLOWSHIP
             -COMMUNITY OUTREACH AND EDUCATION
