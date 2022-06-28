@@ -1391,10 +1391,10 @@ header .banner-text {
   width: 100%;
 }
 
-header .banner-text2 {
-  /* align-content: center; */
+/* header .banner-text2 {
+  align-content: center;
   width: 40%;
-}
+} */
 
 header .banner-text h1 {
   font: 90px/1.1em "opensans-bold", sans-serif;

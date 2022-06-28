@@ -15,7 +15,7 @@ const Skills = () => (
       <img src={foursquareicons} alt="" />
     </div>
     <div className="three columns">
-
+      
       <img src={pastoranddoctor} alt="" />
       <img src={deacons} alt="" />
       <img src={ancient} alt="" />
