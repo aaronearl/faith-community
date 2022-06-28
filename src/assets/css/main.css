@@ -1392,8 +1392,8 @@ header .banner-text {
 }
 
 header .banner-text2 {
-  align-content: center;
-  width: 100%;
+  /* align-content: center; */
+  width: 40%;
 }
 
 header .banner-text h1 {

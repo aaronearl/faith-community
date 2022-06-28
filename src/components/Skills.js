@@ -11,10 +11,11 @@ const Skills = () => (
     <h1>
       <span>Ministry</span>
     </h1>
-    <div className="banner-text2">
+    <div className="banner-text">
       <img src={foursquareicons} alt="" />
     </div>
     <div className="three columns">
+
       <img src={pastoranddoctor} alt="" />
       <img src={deacons} alt="" />
       <img src={ancient} alt="" />
