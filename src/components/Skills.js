@@ -3,12 +3,17 @@ import ancient from "../assets/images/ancient.png";
 import pastoranddoctor from "../assets/images/pastoranddoctor.jpg";
 import youngmen from "../assets/images/youngmen.jpg";
 import deacons from "../assets/images/deacons.jpg";
+import foursquareicons from "../assets/images/foursquareicons.png";
+
 const Skills = () => (
   <div className="row skill">
     {/* <div className="three columns header-col"> */}
     <h1>
       <span>Ministry</span>
     </h1>
+    <div className="banner-text2">
+      <img src={foursquareicons} alt="" />
+    </div>
     <div className="three columns">
       <img src={pastoranddoctor} alt="" />
       <img src={deacons} alt="" />
@@ -40,7 +45,7 @@ const Skills = () => (
           <br></br>
           <p>For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! </p>
 
-          <p>Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.</p>
+          <p>The FOURSQUARE GOSPEL reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.  "Jesus Christ the same yesterday, and today, and forever" Heb 13:8 </p>
 
         </h4>
         <br />
