@@ -42,7 +42,7 @@ const Skills = () => (
           <br></br>
           <p>For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! </p>
 
-          <p>The Foursquare Gosepl represents the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King. "Jesus Christ the Same Yesterday, and Today and Forever."  Hebrew 13:8 </p>
+          <p>The Foursquare Gosepl represents the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four "Symbols" of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King. "Jesus Christ the Same Yesterday, and Today and Forever."  Hebrew 13:8 </p>
 
         </h4>
         <br />
