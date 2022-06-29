@@ -3,16 +3,15 @@ import ancient from "../assets/images/ancient.png";
 import pastoranddoctor from "../assets/images/pastoranddoctor.jpg";
 import youngmen from "../assets/images/youngmen.jpg";
 import deacons from "../assets/images/deacons.jpg";
-import foursquareicons from "../assets/images/foursquareicons.png";
+import foursquareicon from "../assets/images/foursquareicon.jpg";
 const Skills = () => (
   <div className="row skill">
     {/* <div className="three columns header-col"> */}
     <h1>
       <span>Ministry</span>
-      <br></br>
-      <img src={foursquareicons} alt="" />
     </h1>
     <div className="three columns">
+      <img src={foursquareicon} alt="" />
       <img src={pastoranddoctor} alt="" />
       <img src={deacons} alt="" />
       <img src={ancient} alt="" />
