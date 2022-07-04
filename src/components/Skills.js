@@ -4,8 +4,8 @@ import pastoranddoctor from "../assets/images/pastoranddoctor.jpg";
 import youngmen from "../assets/images/youngmen.jpg";
 import deacons from "../assets/images/deacons.jpg";
 import foursquareicon from "../assets/images/foursquareicon.jpg";
-import brian from "../assets/images/brian.png";
-import dru from "../assets/images/dru.png";
+// import brian from "../assets/images/brian.png";
+// import dru from "../assets/images/dru.png";
 
 const Skills = () => (
   <div className="row skill">
@@ -19,8 +19,8 @@ const Skills = () => (
       <img src={deacons} alt="" />
       <img src={ancient} alt="" />
       <img src={youngmen} alt="" />
-      <img src={brian} alt="" />
-      <img src={dru} alt="" />
+      {/* <img src={brian} alt="" />
+      <img src={dru} alt="" /> */}
     </div>
     {/* </div> */}
 
