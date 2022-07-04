@@ -1789,7 +1789,7 @@ const Banner = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().c
   className: "banner-text"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
   className: "responsive-headline"
-}, "Faith Community Foursquare Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "A Foursquare Gospel Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Rev. D.T. Paredes"), ",", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+}, "Faith Community Foursquare Church"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Rev. D.T. Paredes"), ",", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
   className: "smoothscroll",
   href: "#about"
 }, " "), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
@@ -2058,6 +2058,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_youngmen_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/images/youngmen.jpg */ "./src/assets/images/youngmen.jpg");
 /* harmony import */ var _assets_images_deacons_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/images/deacons.jpg */ "./src/assets/images/deacons.jpg");
 /* harmony import */ var _assets_images_foursquareicon_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/images/foursquareicon.jpg */ "./src/assets/images/foursquareicon.jpg");
+/* harmony import */ var _assets_images_brian_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/images/brian.png */ "./src/assets/images/brian.png");
+/* harmony import */ var _assets_images_dru_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/images/dru.png */ "./src/assets/images/dru.png");
+
+
 
 
 
@@ -2084,11 +2088,17 @@ const Skills = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().c
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
   src: _assets_images_youngmen_jpg__WEBPACK_IMPORTED_MODULE_3__["default"],
   alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_brian_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+  alt: ""
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+  src: _assets_images_dru_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+  alt: ""
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
   className: "nine columns main-col"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
   className: "bars"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, "-IN DEPTH STUDY OF GOD'S WORD -MUSIC -FOOD FELLOWSHIP -COMMUNITY OUTREACH AND EDUCATION -DRAMA: 'The Faith Community Players' -COUNSELING and MORE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "One of Our Strengths is Our Willingness to \"Submit to One Another in Love\" Ephesians 5:21"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Rev. D.T. Paredes and Dr. Mardra J. Paredes are 'A Brother and Sister Ministry Team' that Serve as Senior Pastor and Assistant Pastor; Respectively."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Why attend the Faith Community Foursquare Church?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "For Increased Spiritual Strength Phillipians 4:13 'I can do all this through him who gives me strength'.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Our name reflects the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four squares of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, "-IN DEPTH STUDY OF GOD'S WORD -MUSIC -FOOD FELLOWSHIP -COMMUNITY OUTREACH AND EDUCATION -DRAMA: 'The Faith Community Players' -COUNSELING and MORE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "One of Our Strengths is Our Willingness to \"Submit to One Another in Love\" Ephesians 5:21"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Rev. D.T. Paredes and Dr. Mardra J. Paredes are 'A Brother and Sister Ministry Team' that Serve as Senior Pastor and Assistant Pastor; Respectively."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Why attend the Faith Community Foursquare Church?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "For Increased Spiritual Strength  \"I can do all this through Christ who strengthens me\" Phillipians 4:13.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "The Foursquare Gospel represents the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four \"Symbols\" of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King. \"Jesus Christ the Same Yesterday, and Today and Forever.\"  Hebrew 13:8 ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))));
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Skills);
 
@@ -7426,6 +7436,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/images/brian.png":
+/*!*************************************!*\
+  !*** ./src/assets/images/brian.png ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/brian-cefca8b995a6e20217ae972424143c01.png");
+
+/***/ }),
+
 /***/ "./src/assets/images/deacons.jpg":
 /*!***************************************!*\
   !*** ./src/assets/images/deacons.jpg ***!
@@ -7438,6 +7463,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/deacons-cda99ec458df030fb4641152ef11888a.jpg");
+
+/***/ }),
+
+/***/ "./src/assets/images/dru.png":
+/*!***********************************!*\
+  !*** ./src/assets/images/dru.png ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "static/dru-35ce922efb809012edad56fe9937d6f5.png");
 
 /***/ }),
 
