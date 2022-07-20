@@ -4,7 +4,7 @@ const Education = () => (
   <div className="row education">
     <div className="three columns header-col">
       <h1>
-        <span>Mission</span>
+        <span>Appointments</span>
       </h1>
     </div>
 
@@ -25,7 +25,7 @@ const Education = () => (
           {/* <h3>Our Assignment</h3> */}
           <p className="info">
             <h4>
-              Our Mission is to Build a Community of Faith that is motivated by Love, that is Evangelistic in Zeal that Operates in the Principles and Teachings of the Holy Bible; where people find and live out their Divine Purpose and Fulfill the Great Commission.
+              "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
             </h4>
             <span>&bull;</span></p>
         </div>

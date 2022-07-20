@@ -1,9 +1,9 @@
 import React from "react";
-import ancient from "../assets/images/ancient.png";
-import pastoranddoctor from "../assets/images/pastoranddoctor.jpg";
-import youngmen from "../assets/images/youngmen.jpg";
-import deacons from "../assets/images/deacons.jpg";
-import foursquareicon from "../assets/images/foursquareicon.jpg";
+import heartbreaker from "../assets/images/heartbreaker.jpg";
+import getfresh from "../assets/images/getfresh.jpg";
+import surfer from "../assets/images/surfer.jpg";
+import waves from "../assets/images/waves.jpg";
+import dukethebarber from "../assets/images/dukethebarber.png";
 // import brian from "../assets/images/brian.png";
 // import dru from "../assets/images/dru.png";
 
@@ -11,14 +11,14 @@ const Skills = () => (
   <div className="row skill">
     {/* <div className="three columns header-col"> */}
     <h1>
-      <span>Ministry</span>
+      <span>Gallery</span>
     </h1>
     <div className="three columns">
-      <img src={foursquareicon} alt="" />
-      <img src={pastoranddoctor} alt="" />
-      <img src={deacons} alt="" />
-      <img src={ancient} alt="" />
-      <img src={youngmen} alt="" />
+      <img src={dukethebarber} alt="" />
+      <img src={waves} alt="" />
+      <img src={surfer} alt="" />
+      <img src={heartbreaker} alt="" />
+      <img src={getfresh} alt="" />
       {/* <img src={brian} alt="" />
       <img src={dru} alt="" /> */}
     </div>
@@ -31,23 +31,13 @@ const Skills = () => (
         <h4>
           {/* <p>What are the of a Foursquare Church?</p> */}
 
-          <p>The MINISTRIES of FAITH COMMUNITY FOURSQUARE CHURCH are Manifold; including but not limited to...</p>
-          <ul>
-            -IN DEPTH STUDY OF GOD'S WORD
-            -MUSIC
-            -FOOD FELLOWSHIP
-            -COMMUNITY OUTREACH AND EDUCATION
-            -DRAMA: 'The Faith Community Players'
-            -COUNSELING and MORE
-          </ul>
-          <p>One of Our Strengths is Our Willingness to "Submit to One Another in Love" Ephesians 5:21</p>
-          <p>Rev. D.T. Paredes and Dr. Mardra J. Paredes are 'A Brother and Sister Ministry Team' that Serve as Senior Pastor and Assistant Pastor; Respectively.</p>
-          <br></br>
-          <h2>Why attend the Faith Community Foursquare Church?</h2>
-          <br></br>
-          <p>For Increased Spiritual Strength  "I can do all this through Christ who strengthens me" Phillipians 4:13.  Thus, we invite you to fellowship with us this Sunday at 10am.  Let's get Free! Let's Spread Love and Get Stronger through the Power of Jesus Christ! </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque aliquet enim vel dignissim. Cras tempus luctus lorem, eu malesuada nulla rutrum ac. Nulla facilisi. Integer neque risus, vestibulum ac ante sed, scelerisque sodales nisl. Duis sit amet dui tortor. Ut quis efficitur libero. Fusce quis mattis eros, vitae convallis ipsum. Pellentesque vitae odio consectetur tortor imperdiet sodales. Suspendisse sed condimentum nisl.
 
-          <p>The Foursquare Gospel represents the unchanging ministry of Jesus Christ and our mission to declare it worldwide. The four "Symbols" of our logo represent the four scriptural roles of Jesus as Savior, Baptizer with the Holy Spirit, Healer and Soon-Coming King. "Jesus Christ the Same Yesterday, and Today and Forever."  Hebrew 13:8 </p>
+            Pellentesque id orci et nisl malesuada lacinia eu a ex. Donec fringilla dictum dui, non tempus neque mattis nec. Integer vitae ante quis orci imperdiet suscipit. Nunc rutrum sollicitudin accumsan. Etiam risus velit, rhoncus quis ante vitae, semper condimentum neque. Ut scelerisque porttitor nisi, at sagittis lorem tincidunt nec. Morbi euismod lacinia elit, sed pharetra magna. Donec venenatis lacinia dolor pellentesque facilisis. Aliquam vitae laoreet dolor. Donec pulvinar hendrerit ante id pellentesque. Suspendisse luctus, est id accumsan maximus, est nisl luctus mauris, id vulputate eros ligula nec felis. Nunc quam magna, pharetra quis congue nec, convallis ut augue. Fusce vitae nisl elit. Cras diam magna, ornare volutpat cursus ut, volutpat nec velit.
+
+            Vivamus porta elit ac lacus imperdiet, mattis varius nulla cursus. Quisque id facilisis nibh, sed consectetur tellus. Aliquam ultrices ligula et mauris euismod maximus. Nulla sollicitudin arcu blandit libero lacinia interdum quis nec justo. Fusce vitae dui ut lectus elementum euismod. Donec molestie justo quam, eu finibus magna blandit ac. Quisque maximus lacinia velit, ac sagittis eros auctor id. Quisque facilisis, massa non porta accumsan, elit sem maximus nisi, a ultricies ante urna vel massa. Aenean nec mattis lacus. Donec tempor tempor neque, in facilisis purus dignissim vitae. Nullam sapien nulla, posuere a accumsan et, feugiat nec lectus.
+
+            Duis magna purus, gravida eu aliquet et, tincidunt vitae ipsum. Proin vel lectus nec odio aliquet laoreet. Donec nisl tortor, viverra nec efficitur eget, finibus id massa. Vestibulum vel turpis sit amet turpis imperdiet suscipit at nec nibh. Ut egestas nisl non est fermentum pretium. Phasellus in nisi sed sem molestie venenatis a vel massa. Curabitur quis accumsan ligula, nec cursus erat. Quisque mattis urna at urna cursus bibendum. Nam ornare varius est, eget ultricies erat lacinia non. Praesent interdum ullamcorper arcu nec semper. Mauris mollis odio ipsum, non dapibus urna mollis vitae. Aliquam erat volutpat. Sed ullamcorper euismod faucibus. Etiam finibus mollis nunc non ornare.</p>
 
         </h4>
         <br />

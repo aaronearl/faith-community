@@ -10,40 +10,24 @@ const About = () => (
         <img className="profile-pic" src={profilePic} alt="" />
       </div>
       <div className="nine columns main-col">
-        <h2>Our Pastor</h2>
+        <h2>King Duke</h2>
         <h4>
           <p>
-            Rev. D.T. Paredes has had the honor of preaching, teaching, and singing the Gospel of Jesus Christ from South Central Los Angeles to Cape Town, South Africa.
-            Rev. Paredes, a native of Los Angeles, CA has served for 17 years as a Christian School Educator
-            and 30 consecutive years as a Senior Pastor in The International Church of the  Foursquare Gospel, serving in the heart of the inner-city of Los Angeles.
-            Rev. D.T. Paredes was academically prepared at both L.I.F.E. Bible College and Fuller Theological Seminary.  Rev. D.T. Paredes has taught and trained pastors and leaders internationally.
-            Through Music and Ministry, the doors of opportunity have been opened across the globe.
-            Rev. Paredes has traveled to Five continents and sung at some of the world's most celebrated music venues; from New York's Legendary Carnegie Hall to U.C.L.A.’s Historic Royce Hall, as well as some of the great Concert Halls of the United Kingdom, including working with The Royal Philharmonic Orchestra and recording at the legendary Abbey Road Studio.
-            Rev. Paredes also has a long history of fruitfulness in the area of Discipleship and Community Development.  His work in the area of Community Development as a Board Member of the
-            West Angeles Church of God In Christ CDC (Community Development Corporation) has been distinguished by being written into the Congregational Record of The United States of America (Currently on file in The United States Library of Congress.)
-            His legacy of discipleship began nearly twenty years prior to the beginning of his “formal” pastorate and spans well over two generations.
-            Even with his long history of service, “Pastor” as he is lovingly called; is still passionate about people and letting them know that no matter how disenfranchised or disqualified they may feel, they are truly…
-            “Accepted in the Beloved!”  Ephesians 1:6
-
-          </p>
+            Darrel Lewis aka KING DUKE."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+          <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
         </h4>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5opQ98WOhLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9HlV-KlUb_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div className="row">
           <div className="columns contact-details">
             <h2>Contact Details</h2>
             <h3>
               <p className="address">
-                <span>Faith Community Foursquare Church</span>
+                <span>Duke The Barber</span>
                 <br />
-                <span>Sunday Morning Service 10am</span>
-                <br />
+                <span>By appointment</span>
                 <span>
-                  <br /> 5519 Avalon Blvd.
+                  <br /> Los Angeles, CA 90044
                 </span>
-                <span>
-                  <br /> Los Angeles, CA 90011 US
-                </span>
-                <span>Wednesday Night Bible Study via Zoom </span>
                 <br />
                 {/* <span>(323) 816-6163</span> */}
                 <br />

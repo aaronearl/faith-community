@@ -23,17 +23,17 @@ const Testimonials = () => (
             <li>
               <blockquote>
                 <p>
-                  We celebrate with you, Pastor Terry Paredes your family is Godly Proud of you and all of your work in the ministry over these last 54 years.  To God be the glory for the things he has done through your life thus far, BUT THE BEST IS YET TO COME!!!
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque aliquet enim vel dignissim. Cras tempus luctus lorem, eu malesuada nulla rutrum ac. Nulla facilisi. Integer neque risus, vestibulum ac ante sed, scelerisque sodales nisl. Duis sit amet dui tortor. Ut quis efficitur libero. Fusce quis mattis eros, vitae convallis ipsum. Pellentesque vitae odio consectetur tortor imperdiet sodales. Suspendisse sed condimentum nisl.
                 </p>
-                <cite>Marcus, Teddi, Randi and Jeanine</cite>
+                <cite>Duis magna purus, gravida eu aliquet et</cite>
               </blockquote>
             </li>
             <li>
               <blockquote>
                 <p>
-                  Sincere congratulations to Pastor D.T. Paredes on 30 years of pastoral service and for your continued faithfulness, and longevity; and, the best is yet to come.
+                  Pellentesque id orci et nisl malesuada lacinia eu a ex. Donec fringilla dictum dui, non tempus neque mattis nec. Integer vitae ante quis orci imperdiet suscipit. Nunc rutrum sollicitudin accumsan. Etiam risus velit, rhoncus quis ante vitae, semper condimentum neque. Ut scelerisque porttitor nisi, at sagittis lorem tincidunt nec
                 </p>
-                <cite>Betty Dixon, Pico Pre-School </cite>
+                <cite>Duis magna purus, gravida eu aliquet et</cite>
               </blockquote>
             </li>
             {/* </Slider> */}

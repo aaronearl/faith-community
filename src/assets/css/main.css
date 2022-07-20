@@ -1363,7 +1363,7 @@ header {
   height: 1250px;
   min-height: 200px;
   width: 100%;
-  background: #161415 url(../images/header-background.jpg) no-repeat top center;
+  background: #161415 url(../images/header-background.png) no-repeat top center;
   background-size: cover !important;
   -webkit-background-size: cover !important;
   text-align: center;
@@ -1383,6 +1383,7 @@ header .banner {
   vertical-align: middle;
   margin: 0 auto;
   width: 85%;
+  padding-top: 450px;
   padding-bottom: 30px;
   text-align: center;
 }
@@ -1401,7 +1402,7 @@ header .banner-text h1 {
 
 header .banner-text h2 {
   font: 40px/1.9em "librebaskerville-regular", serif;
-  color: #625fa3;
+  color: #ffffff;
   margin: 0 auto;
   width: 70%;
   text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);

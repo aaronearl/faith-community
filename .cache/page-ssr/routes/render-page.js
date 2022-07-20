@@ -7349,7 +7349,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
         if (checkerResult == null) {
           return null;
         }
-        if (checkerResult.data.hasOwnProperty('expectedType')) {
+        if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
           expectedTypes.push(checkerResult.data.expectedType);
         }
       }
@@ -9274,24 +9274,90 @@ var e=__webpack_require__(/*! object-assign */ "./node_modules/gatsby/dist/inter
 /***/ }),
 
 /***/ "react-dom/server":
-/*!***************************************************************************************************************!*\
-  !*** external "/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/react-dom/server.js" ***!
-  \***************************************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** external "/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/react-dom/server.js" ***!
+  \********************************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/react-dom/server.js");
+module.exports = require("/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/react-dom/server.js");
 
 /***/ }),
 
 /***/ "react":
-/*!**********************************************************************************************************!*\
-  !*** external "/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/react/index.js" ***!
-  \**********************************************************************************************************/
+/*!***************************************************************************************************************!*\
+  !*** external "/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/react/index.js" ***!
+  \***************************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/react/index.js");
+module.exports = require("/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/react/index.js");
+
+/***/ }),
+
+/***/ "http":
+/*!***********************!*\
+  !*** external "http" ***!
+  \***********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("http");
+
+/***/ }),
+
+/***/ "https":
+/*!************************!*\
+  !*** external "https" ***!
+  \************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("https");
+
+/***/ }),
+
+/***/ "punycode":
+/*!***************************!*\
+  !*** external "punycode" ***!
+  \***************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("punycode");
+
+/***/ }),
+
+/***/ "stream":
+/*!*************************!*\
+  !*** external "stream" ***!
+  \*************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("stream");
+
+/***/ }),
+
+/***/ "url":
+/*!**********************!*\
+  !*** external "url" ***!
+  \**********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("url");
+
+/***/ }),
+
+/***/ "zlib":
+/*!***********************!*\
+  !*** external "zlib" ***!
+  \***********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("zlib");
 
 /***/ })
 

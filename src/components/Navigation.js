@@ -27,17 +27,17 @@ class Navigation extends React.Component {
           </li>
           <li className={isCurrent('#about', pathname)}>
             <a className="smoothscroll" href="#about">
-              Pastor
+              King Duke
             </a>
           </li>
           <li className={isCurrent('#resume', pathname)}>
             <a className="smoothscroll" href="#resume">
-              Mission
+              Appointment / Prices
             </a>
           </li>
           <li className={isCurrent('#skills', pathname)}>
             <a className="smoothscroll" href="#skills">
-              Ministry
+              Gallery
             </a>
           </li>
           <li className={isCurrent('#testimonials', pathname)}>
@@ -47,7 +47,7 @@ class Navigation extends React.Component {
           </li>
           <li className={isCurrent('#footer', pathname)}>
             <a className="smoothscroll" href="#footer">
-              Footer
+
             </a>
           </li>
         </ul>

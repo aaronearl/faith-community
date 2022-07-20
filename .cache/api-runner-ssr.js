@@ -1,14 +1,14 @@
 var plugins = [{
       name: 'gatsby-plugin-typography',
-      plugin: require('/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/gatsby-plugin-typography/gatsby-ssr'),
+      plugin: require('/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/gatsby-plugin-typography/gatsby-ssr'),
       options: {"plugins":[],"pathToConfigModule":"src/utils/typography.js"},
     },{
       name: 'gatsby-plugin-google-fonts',
-      plugin: require('/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/gatsby-plugin-google-fonts/gatsby-ssr'),
+      plugin: require('/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/gatsby-plugin-google-fonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":["librebaskerville","open sans"]},
     },{
       name: 'gatsby-plugin-react-helmet',
-      plugin: require('/Users/74thstreetmacair/Documents/dev/gatsby-stuff/paraedes/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/74thstreetmacair/Documents/dev/gatsby-stuff/dukethebarber/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 /* global plugins */

@@ -4,10 +4,10 @@ import SocialLinks from "./SocialLinks";
 const Banner = () => (
   <div className="row banner">
     <div className="banner-text">
-      <h1 className="responsive-headline">Faith Community Foursquare Church</h1>
+      <h1 className="responsive-headline"></h1>
       {/* <h2>
         Foursquare Gospel Church</h2> */}
-      <h2><span>Rev. D.T. Paredes</span>,
+      <h2><span>Expert Cuts, Fades, Graphics And Shaves</span>
         {/* <span>Restaurant Manager</span> and <span>Territory Manager</span>  Let's */}
         <a className="smoothscroll" href="#about">
           {" "}
@@ -16,7 +16,7 @@ const Banner = () => (
         {/* and learn more */}
         <a className="smoothscroll" href="#about">
           {" "}
-          Senior Pastor
+          Master Barber Duke
         </a>
       </h2>
       <hr />

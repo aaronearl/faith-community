@@ -4,12 +4,12 @@ const Work = () => (
   <div className="row work">
     <div className="three columns header-col">
       <h1>
-        <span>Core Values</span>
+        <span>Prices</span>
       </h1>
     </div>
 
     <div className="nine columns main-col">
-    <div className="row item">
+      <div className="row item">
         <div className="twelve columns">
           {/* <h3>Beliefs</h3> */}
           <p className="info">
@@ -18,18 +18,11 @@ const Work = () => (
             {/* <em className="date">2019 - Present</em> */}
           </p>
 
-          <h4>
-          <li>The Word of God</li>
-          <li>The Love of God</li>
-          <li>The Move of the Holy Spirit</li>
-          <li>Spiritual Maturity</li>
-          <li>Unity</li>
-          <li>Loyalty</li>
-          <li>Fruitfulness</li>
-          <li>Excellence</li>
-          <li>Teachableness</li>
-          <li>Hospitality / Courtesy</li>
-          </h4>
+          <h3>
+            <li>Fades         $25.00</li>
+            <li>Graphics $50.00</li>
+            <li>Shave  $20.00</li>
+          </h3>
         </div>
       </div>
 
